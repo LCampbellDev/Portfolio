@@ -1,0 +1,90 @@
+---
+import SiteHeader from '../components/header.astro';
+/**
+ * BaseLayout.astro
+ * Root layout for every page.
+ * Loads design tokens, reset, global styles, and Google Fonts.
+ * Provides semantic page structure with skip navigation.
+ */
+
+interface Props {
+  title: string;
+  description?: string;
+  canonicalUrl?: string;
+}
+
+const {
+  title,
+  description = 'Larna Campbell — Software engineer and educator building accessible, user-centred systems.',
+  canonicalUrl,
+} = Astro.props;
+
+const siteUrl = 'https://lcampbell.dev';
+const canonical = canonicalUrl ?? `${siteUrl}${Astro.url.pathname}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonical} />
+
+    <!-- Favicon placeholder -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <!--
+      Google Fonts:
+      DM Sans        — clean, contemporary sans-serif for body and UI
+      DM Serif Display — editorial serif for display headings
+      JetBrains Mono — readable monospace for code
+
+      preconnect reduces latency; display=swap avoids invisible text during load.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>{title}</title>
+  </head>
+
+  <body>
+    <!-- Skip navigation — first focusable element on every page -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Site header slot -->
+    <slot name="header" />
+
+    <!-- Main content landmark -->
+    <main id="main-content" tabindex="-1">
+      <slot />
+    </main>
+
+    <!-- Site footer slot -->
+    <slot name="footer" />
+  </body>
+</html>
+
+<style is:global>
+  /* Styles are imported in a purposeful order:
+     1. tokens — design variables (no output)
+     2. reset  — normalise browser defaults
+     3. global — base typography, layout utilities, components
+  */
+  @import '../styles/tokens.css';
+  @import '../styles/reset.css';
+  @import '../styles/global.css';
+</style>
