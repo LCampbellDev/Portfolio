@@ -1,0 +1,161 @@
+---
+/**
+ * Experience.astro
+ * Professional experience — education leadership, software/project work,
+ * transferable systems and delivery experience.
+ */
+ 
+const experience = [
+  {
+    role: 'Software Engineer',
+    org: 'Placeholder Organisation',
+    period: '2023 — Present',
+    type: 'Software & Engineering',
+    highlights: [
+      'Building full-stack web applications using JavaScript, Python and SQL.',
+      'Designing accessible, user-centred interfaces to WCAG 2.2 AA standard.',
+      'Developing and maintaining REST APIs and data-driven systems.',
+      'Applying structured architecture, testing, and secure coding practices.',
+    ],
+  },
+  {
+    role: 'Education Leader & Digital Learning Designer',
+    org: 'Placeholder Institution',
+    period: '2017 — 2023',
+    type: 'Education Leadership',
+    highlights: [
+      'Designed and delivered accessible digital learning experiences for diverse learners.',
+      'Managed cross-functional teams and complex delivery programmes.',
+      'Applied data analysis to inform decisions and improve outcomes.',
+    ],
+  },
+  {
+    role: 'MA Digital Education',
+    org: 'University of Leeds',
+    period: '2020 — 2023',
+    type: 'Education',
+    highlights: [
+      'Research-informed study of digital systems, learning design, and technology.',
+      'Developed expertise in user-centred design and accessible digital environments.',
+    ],
+  },
+];
+---
+ 
+<section class="experience section" id="experience" aria-labelledby="experience-heading">
+  <div class="container">
+ 
+    <div class="section-header">
+      <p class="eyebrow">Background</p>
+      <h2 class="section-header__title" id="experience-heading">Experience</h2>
+      <div class="divider" aria-hidden="true"></div>
+    </div>
+ 
+    <ol class="experience__list" role="list">
+      {experience.map((item) => (
+        <li class="experience__item">
+          <div class="experience__meta">
+            <span class="tag">{item.type}</span>
+            <time class="experience__period">{item.period}</time>
+          </div>
+          <div class="experience__content">
+            <h3 class="experience__role">{item.role}</h3>
+            <p class="experience__org">{item.org}</p>
+            <ul class="experience__highlights" role="list">
+              {item.highlights.map((point) => (
+                <li class="experience__highlight">{point}</li>
+              ))}
+            </ul>
+          </div>
+        </li>
+      ))}
+    </ol>
+ 
+  </div>
+</section>
+ 
+<style>
+  .experience__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+ 
+  .experience__item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    padding-block: var(--space-8);
+    border-top: var(--border-width) solid var(--color-border);
+  }
+ 
+  .experience__item:last-child {
+    border-bottom: var(--border-width) solid var(--color-border);
+  }
+ 
+  @media (min-width: 48em) {
+    .experience__item {
+      grid-template-columns: 14rem 1fr;
+      gap: var(--space-10);
+      align-items: start;
+    }
+  }
+ 
+  /* Meta column */
+  .experience__meta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding-top: var(--space-1);
+  }
+ 
+  .experience__period {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    font-weight: var(--weight-medium);
+  }
+ 
+  /* Content column */
+  .experience__role {
+    font-size: var(--text-lg);
+    font-weight: var(--weight-bold);
+    color: var(--color-text-heading);
+    margin-bottom: var(--space-1);
+  }
+ 
+  .experience__org {
+    font-size: var(--text-sm);
+    color: var(--color-accent);
+    font-weight: var(--weight-medium);
+    margin: 0 0 var(--space-4);
+    max-width: none;
+  }
+ 
+  .experience__highlights {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+ 
+  .experience__highlight {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    padding-left: var(--space-4);
+    position: relative;
+  }
+ 
+  .experience__highlight::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 6px;
+    height: 6px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-accent-subtle);
+  }
+</style>
+ 
