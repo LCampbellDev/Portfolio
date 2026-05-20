@@ -1,0 +1,63 @@
+/*
+ * ============================================================
+ * PRINT STYLES
+ * Clean, readable output. Hides navigation and interactive UI.
+ * ============================================================
+ */
+
+@media print {
+  /* Hide non-content elements */
+  .site-header,
+  .site-footer,
+  .mobile-menu,
+  .btn,
+  .hero__links,
+  .hero__social,
+  .hero__accent,
+  .projects__card-links,
+  .skip-link {
+    display: none !important;
+  }
+
+  /* Reset colours for print */
+  body {
+    color: #000;
+    background: #fff;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3, h4 {
+    color: #000;
+    page-break-after: avoid;
+  }
+
+  p, li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Avoid breaking cards across pages */
+  .projects__card,
+  .experience__item,
+  .skills__group {
+    page-break-inside: avoid;
+  }
+
+  /* Show link URLs inline */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    color: #444;
+  }
+
+  /* Full width for print */
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .section {
+    padding-block: 2rem;
+  }
+}

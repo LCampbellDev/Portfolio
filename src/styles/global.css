@@ -296,7 +296,7 @@ code {
   padding: 0.15em 0.4em;
   border-radius: var(--radius-sm);
 }
-
+ 
 pre {
   font-family: var(--font-mono);
   font-size: var(--text-sm);
@@ -307,9 +307,10 @@ pre {
   overflow-x: auto;
   line-height: var(--leading-relaxed);
 }
-
+ 
 pre code {
   background: none;
   padding: 0;
   font-size: inherit;
 }
+ 
