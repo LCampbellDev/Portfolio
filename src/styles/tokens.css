@@ -59,6 +59,7 @@
   --color-text-secondary: var(--color-grey-600);
   --color-text-muted:     var(--color-grey-400);
   --color-text-on-accent:  var(--color-off-white);   /* text on accent buttons — 7.02:1 on #065f59 ✓ AAA */
+  --color-text-on-dark:  var(--color-off-white);   /* text on always-dark surfaces — footer etc */
 
   --color-border:         var(--color-grey-200);
   --color-border-strong:  var(--color-grey-400);
