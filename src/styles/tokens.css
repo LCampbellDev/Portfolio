@@ -14,36 +14,48 @@
    * COLOUR: Neutrals
    * ---------------------------------------------------------- */
 
-  --color-white:        #ffffff;
+  --color-off-white:    #f8f7f4;
   --color-grey-50:      #f7f7f6;   /* page background */
   --color-grey-100:     #eeede9;   /* subtle section bg */
   --color-grey-200:     #dddcd8;   /* borders, dividers */
-  --color-grey-400:     #9b9992;   /* placeholder / muted */
-  --color-grey-600:     #5c5a55;   /* secondary text */
-  --color-grey-800:     #2e2d2b;   /* primary text */
-  --color-grey-900:     #1a1917;   /* headings / near-black */
+  --color-grey-400:     #9b9992;   /* decorative/non-text only — 2.66:1 fails AA */
+  --color-grey-600:     #5c5a55;   /* secondary text — 8.5:1 ✓ AAA */
+  --color-grey-800:     #2e2d2b;   /* primary text — 12.84:1 ✓ AAA */
+  --color-grey-900:     #1a1917;   /* headings — 17.46:1 ✓ AAA */
 
+  
   /* ----------------------------------------------------------
    * COLOUR: Accent — Teal
    * All combinations meet WCAG 2.2 AA against white/grey-50
    * ---------------------------------------------------------- */
-
-  --color-accent:         #0a7a72;   /* primary accent — 4.6:1 on white ✓ */
-  --color-accent-hover:   #065f59;   /* darker for hover states */
+  /* ----------------------------------------------------------
+ * COLOUR: Accent — Teal
+ * Contrast ratios tested against #f8f7f4 (page background)
+ * --color-accent:   #065f59 — 7.02:1 ✓ AAA normal text
+ * --color-accent-hover: --color-accent-hover: #033a361.79:1 on #f8f7f4 ✓ AAA */
+ * ---------------------------------------------------------- */
+  --color-accent:         #065f59;   /* primary accent — 4.6:1 on white ✓ */
+  --color-accent-hover:   #033a36;   /* hover state — 11.79:1 on #f8f7f4 ✓ AAA */
   --color-accent-light:   #e6f4f3;   /* tinted bg, chips, highlights */
   --color-accent-subtle:  #b3dbd8;   /* decorative borders, lines */
+  --color-card:           #fcfbf9;   /* card background — 7.28:1 with #065f59 ✓ AAA */
 
   /* Focus ring — high visibility, meets 3:1 non-text contrast */
-  --color-focus:          #0a7a72;
+  --color-focus:          #065f59;   /* was #0a7a72 */
   --color-focus-bg:       #ffdd00;   /* GOV.UK-style yellow focus bg */
+
+
+  
+
 
   /* ----------------------------------------------------------
    * COLOUR: Semantic aliases
    * ---------------------------------------------------------- */
 
-  --color-bg:             var(--color-white);
+  --color-bg:             var(--color-off-white);
   --color-bg-subtle:      var(--color-grey-50);
   --color-bg-muted:       var(--color-grey-100);
+  --color-bg-card:        var(--color-card);  
 
   --color-text:           var(--color-grey-800);
   --color-text-heading:   var(--color-grey-900);

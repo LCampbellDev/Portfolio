@@ -1,5 +1,6 @@
 ---
-import SiteHeader from '../components/header.astro';
+import Header from '../components/navigation/Header.astro';
+import Footer from '../components/navigation/Footer.astro';
 /**
  * BaseLayout.astro
  * Root layout for every page.
@@ -15,7 +16,7 @@ interface Props {
 
 const {
   title,
-  description = 'Larna Campbell — Software engineer building accessible, user-centred systems.',
+  description = 'Larna Campbell — Software engineer and educator building accessible, user-centred systems.',
   canonicalUrl,
 } = Astro.props;
 
@@ -30,26 +31,34 @@ const canonical = canonicalUrl ?? `${siteUrl}${Astro.url.pathname}`;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
+    <meta name="author" content="Larna Campbell" />
+    <meta name="theme-color" content="#065f59" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href={canonical} />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />  ← add this
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Larna Campbell" />
+
+    <!-- Twitter / X card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
 
     <!--
       Google Fonts:
-      DM Sans        — clean, contemporary sans-serif for body and UI
+      DM Sans          — clean, contemporary sans-serif for body and UI
       DM Serif Display — editorial serif for display headings
-      JetBrains Mono — readable monospace for code
+      JetBrains Mono   — readable monospace for code
 
       preconnect reduces latency; display=swap avoids invisible text during load.
     -->
@@ -67,16 +76,14 @@ const canonical = canonicalUrl ?? `${siteUrl}${Astro.url.pathname}`;
     <!-- Skip navigation — first focusable element on every page -->
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <!-- Site header slot -->
-    <slot name="header" />
+    <Header />
 
     <!-- Main content landmark -->
     <main id="main-content" tabindex="-1">
       <slot />
     </main>
 
-    <!-- Site footer slot -->
-    <slot name="footer" />
+    <Footer />
   </body>
 </html>
 
@@ -85,8 +92,10 @@ const canonical = canonicalUrl ?? `${siteUrl}${Astro.url.pathname}`;
      1. tokens — design variables (no output)
      2. reset  — normalise browser defaults
      3. global — base typography, layout utilities, components
+     4. print  — print-specific overrides
   */
   @import '../styles/tokens.css';
   @import '../styles/reset.css';
   @import '../styles/global.css';
+  @import '../styles/print.css';
 </style>
