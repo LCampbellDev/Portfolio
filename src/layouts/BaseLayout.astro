@@ -70,6 +70,23 @@ const canonical = canonicalUrl ?? `${siteUrl}${Astro.url.pathname}`;
     />
 
     <title>{title}</title>
+    
+    <!--
+      Anti-flash script — runs before page renders.
+      Reads saved theme preference from localStorage and applies
+      data-theme to <html> immediately, preventing a flash of
+      the wrong colour scheme on page load.
+      Inline intentionally — must execute before first paint.
+    -->
+    <script is:inline>
+      (function () {
+        const saved = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved ?? (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+
   </head>
 
   <body>
@@ -89,13 +106,14 @@ const canonical = canonicalUrl ?? `${siteUrl}${Astro.url.pathname}`;
 
 <style is:global>
   /* Styles are imported in a purposeful order:
-     1. tokens — design variables (no output)
-     2. reset  — normalise browser defaults
-     3. global — base typography, layout utilities, components
-     4. print  — print-specific overrides
+    1. tokens — design variables (no output)
+    2. reset  — normalise browser defaults
+    3. global — base typography, layout utilities, components
+    4. print  — print-specific overrides
   */
   @import '../styles/tokens.css';
   @import '../styles/reset.css';
   @import '../styles/global.css';
+  @import '../styles/dark-mode.css';
   @import '../styles/print.css';
 </style>

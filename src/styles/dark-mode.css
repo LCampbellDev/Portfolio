@@ -1,0 +1,96 @@
+/*
+ * ============================================================
+ * DARK MODE TOKENS
+ *
+ * Overrides semantic colour aliases only.
+ * Primitive values (--color-grey-*, --color-accent etc.)
+ * are unchanged — only the semantic layer changes.
+ *
+ * Contrast ratios tested on dark backgrounds.
+ * Target: WCAG 2.2 AAA (7:1 normal text, 4.5:1 large text)
+ *
+ * Backgrounds (darkest → lightest):
+ *   #1a1917  page bg         — --color-bg
+ *   #232220  subtle section  — --color-bg-subtle
+ *   #2a2927  card surface    — --color-bg-card
+ *   #333230  muted bg        — --color-bg-muted
+ *
+ * Text:
+ *   #f0efeb  primary    — 15.26:1 on #1a1917 ✓ AAA
+ *   #b8b5af  secondary  —  8.58:1 on #1a1917 ✓ AAA
+ *                          7.10:1 on #2a2927 ✓ AAA
+ *   #afaca8  muted      —  7.77:1 on #1a1917 ✓ AAA
+ *                          (decorative use only recommended)
+ *
+ * Accent:
+ *   #2dd4c8  primary    —  9.50:1 on #1a1917 ✓ AAA
+ *                          7.86:1 on #2a2927 ✓ AAA
+ *   #25b0a5  hover      —  6.55:1 on #1a1917 — hover only, not static text
+ * ============================================================
+ */
+
+/* Applied when JS sets data-theme="dark" on <html> */
+[data-theme="dark"] {
+    --color-bg:             #1a1917;
+  --color-bg-subtle:      #232220;
+  --color-bg-card:        #2a2927;
+  --color-bg-muted:       #333230;
+
+  --color-text:           #f0efeb;
+  --color-text-heading:   #f0efeb;
+  --color-text-secondary: #b8b5af;
+  --color-text-muted:     #afaca8;
+
+  --color-border:         #3d3c39;
+  --color-border-strong:  #524f4c;
+
+  --color-accent:         #2dd4c8;
+  --color-accent-hover:   #25b0a5;
+  --color-accent-light:   #0f3d3a;
+  --color-accent-subtle:  #1a6b65;
+
+  --color-link:           #2dd4c8;
+  --color-link-hover:     #25b0a5;
+
+  /* Focus ring — yellow works on both modes */
+  --color-focus:          #2dd4c8;
+  --color-focus-bg:       #ffdd00;
+
+  /* Shadows need to be stronger on dark backgrounds */
+  --shadow-sm:  0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md:  0 2px 8px 0 rgb(0 0 0 / 0.4), 0 1px 2px 0 rgb(0 0 0 / 0.2);
+  --shadow-lg:  0 4px 16px 0 rgb(0 0 0 / 0.4), 0 2px 4px 0 rgb(0 0 0 / 0.2);
+}
+
+/* OS-level dark mode preference — applies when no manual override is set */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg:             #1a1917;
+    --color-bg-subtle:      #232220;
+    --color-bg-card:        #2a2927;
+    --color-bg-muted:       #333230;
+
+    --color-text:           #f0efeb;
+    --color-text-heading:   #f0efeb;
+    --color-text-secondary: #b8b5af;
+    --color-text-muted:     #afaca8;
+
+    --color-border:         #3d3c39;
+    --color-border-strong:  #524f4c;
+
+    --color-accent:         #2dd4c8;
+    --color-accent-hover:   #25b0a5;
+    --color-accent-light:   #0f3d3a;
+    --color-accent-subtle:  #1a6b65;
+
+    --color-link:           #2dd4c8;
+    --color-link-hover:     #25b0a5;
+
+    --color-focus:          #2dd4c8;
+    --color-focus-bg:       #ffdd00;
+
+    --shadow-sm:  0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --shadow-md:  0 2px 8px 0 rgb(0 0 0 / 0.4), 0 1px 2px 0 rgb(0 0 0 / 0.2);
+    --shadow-lg:  0 4px 16px 0 rgb(0 0 0 / 0.4), 0 2px 4px 0 rgb(0 0 0 / 0.2);
+    }
+}

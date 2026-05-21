@@ -24,17 +24,14 @@
   --color-grey-900:     #1a1917;   /* headings — 17.46:1 ✓ AAA */
 
   
-  /* ----------------------------------------------------------
-   * COLOUR: Accent — Teal
-   * All combinations meet WCAG 2.2 AA against white/grey-50
-   * ---------------------------------------------------------- */
-  /* ----------------------------------------------------------
+/* ----------------------------------------------------------
  * COLOUR: Accent — Teal
  * Contrast ratios tested against #f8f7f4 (page background)
  * --color-accent:   #065f59 — 7.02:1 ✓ AAA normal text
- * --color-accent-hover: --color-accent-hover: #033a361.79:1 on #f8f7f4 ✓ AAA */
+ * --color-accent-hover: --color-accent-hover: #033a361.79:1 on #f8f7f4 ✓ AAA
  * ---------------------------------------------------------- */
-  --color-accent:         #065f59;   /* primary accent — 4.6:1 on white ✓ */
+
+  --color-accent:         #065f59;   /* primary accent — 4.6:1 on off white ✓ */
   --color-accent-hover:   #033a36;   /* hover state — 11.79:1 on #f8f7f4 ✓ AAA */
   --color-accent-light:   #e6f4f3;   /* tinted bg, chips, highlights */
   --color-accent-subtle:  #b3dbd8;   /* decorative borders, lines */
