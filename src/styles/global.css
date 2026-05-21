@@ -217,7 +217,6 @@ hr {
   min-height: 44px;
 }
 
-.btn--primary {
   .btn--primary {
   background-color: var(--color-accent);
   color: var(--color-text-on-accent);
