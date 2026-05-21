@@ -258,7 +258,7 @@ hr {
  * ---------------------------------------------------------- */
 
 .card {
-  background-color: var(--color-white);
+  background-color: var(--color-bg-card);
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: var(--space-8);
