@@ -7,30 +7,30 @@
 
 const projects = [
   {
-    title: 'AccessMap',
+    title: 'MEDICATION & SUPPLEMENT TRACKER',
     summary:
-    'A data-driven web application that visualises accessibility information for public spaces, helping users with disabilities plan routes with confidence.',
-    problem: 'Accessibility data exists but is scattered and hard to act on.',
-    stack: ['Python', 'FastAPI', 'PostgreSQL', 'React', 'Leaflet'],
-    github: 'https://github.com/larnacampbell/accessmap',
+    'Full-stack medication management application designed to support stock tracking, expiry management, and reorder forecasting.',
+    problem: 'Managing medication routines across multiple products, batches, and expiry dates can create unnecessary cognitive load and increase the risk of waste or missed supplies.',
+    stack: ['Python', 'MySQL', 'React', 'Python unittest'],
+    engineeringFocus: 'Structured data modelling, business logic, accessibility-first UX, maintainable architecture',
+    github: 'https://github.com/lcampbelldev',
     demo: null,
   },
   {
-    title: 'ClearForm',
-    summary:
-    'An accessible form builder that generates WCAG-compliant HTML forms with built-in validation, clear error messaging, and screen reader support.',
-    problem: 'Most form tools produce inaccessible markup by default.',
-    stack: ['TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Jest'],
-    github: 'https://github.com/larnacampbell/clearform',
-    demo: 'https://clearform.lcampbell.dev',
+    title: 'Task Management API',
+    summary:'Backend API for structured task tracking and casework-style workflow management.',
+    problem: 'Manual task coordination and inconsistent tracking create inefficiencies and reduce reliability in time-sensitive workflows.',
+    stack: ['P', 'Node.js', 'Express', 'PostgreSQL', 'Jest'],
+    engineeringFocus: 'API design, layered architecture, testing, secure coding, maintainability',
+    github: 'https://github.com/lcampbelldev',
+    demo: null,
   },
   {
-    title: 'DataLens',
-    summary:
-    'A dashboard tool for educators that surfaces student progress data in a low-cognitive-load interface, reducing the time spent interpreting spreadsheets.',
-    problem: 'Raw data in spreadsheets creates barriers for busy educators.',
-    stack: ['Python', 'Django', 'SQLite', 'Chart.js', 'Pytest'],
-    github: 'https://github.com/larnacampbell/datalens',
+    title: 'Language Learning Application',
+    summary: 'Full-stack language learning platform combining structured curriculum content with external API integration.',
+    problem: 'Many language learning platforms prioritise isolated vocabulary practice over structured progression and accessible content organisation.',
+    stack: ['React', 'Next.js', 'JavaScript', 'APIs', 'Jest', 'React Testing Library'],
+    engineeringFocus: 'API integration, scalable component architecture, accessibility, structured content systems', github: 'https://github.com/lcampbelldev',
     demo: null,
   },
 ];
@@ -44,8 +44,7 @@ const projects = [
       <h2 class="section-header__title" id="projects-heading">Featured projects</h2>
       <div class="divider" aria-hidden="true"></div>
       <p class="section-header__description">
-        A selection of full-stack projects built to solve real problems, with
-        accessibility and usability at the centre.
+        A selection of full-stack applications and data-driven systems focused on usability, accessibility, and structured problem solving.
       </p>
     </div>
  
@@ -61,6 +60,11 @@ const projects = [
               <span class="label label--muted">Problem</span>
               <p>{project.problem}</p>
             </div>
+          </div>
+
+          <div class="projects__card-engineeringFocus">
+            <span class="label label--muted">Engineering Focus</span>
+            <p>{project.engineeringFocus}</p>
           </div>
  
           <footer class="projects__card-footer">
@@ -168,6 +172,20 @@ const projects = [
     margin: 0;
     line-height: var(--leading-normal);
   }
+
+  .projects__card-engineeringFocus {
+  margin-top: var(--space-5);
+  padding-top: var(--space-5);
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+.projects__card-engineeringFocus p {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  max-width: none;
+  margin: 0;
+  line-height: var(--leading-normal);
+}
  
   .projects__card-footer {
     margin-top: var(--space-6);
