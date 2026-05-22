@@ -1,0 +1,80 @@
+---
+/**
+ * Community.astro
+ * Community & Professional Interests section.
+ */
+
+const communities = [
+  { name: 'A11y North',               focus: 'Accessibility' },
+  { name: 'Queer Tech Leeds',          focus: 'Inclusion & tech' },
+  { name: 'Coding Black Females',      focus: 'Diversity in tech' },
+  { name: 'Women in Tech York',        focus: 'Diversity in tech' },
+  { name: 'Cajigo Women in Tech',      focus: 'Diversity in tech' },
+  { name: 'NurtureMe Mentoring',       focus: 'Mentoring' },
+  { name: 'AI Workshop',               focus: 'AI & tech learning' },
+];
+---
+
+<section class="community section" id="community" aria-labelledby="community-heading">
+  <div class="container">
+
+    <div class="section-header">
+      <p class="eyebrow">Community</p>
+      <h2 class="section-header__title" id="community-heading">
+        Community &amp; professional interests
+      </h2>
+      <div class="divider" aria-hidden="true"></div>
+      <p class="section-header__description">
+        Active participant in accessibility, mentoring, and community-led technology spaces.
+      </p>
+    </div>
+
+    <ul class="community__grid" role="list">
+      {communities.map((item) => (
+        <li class="community__item">
+          <span class="community__name">{item.name}</span>
+          <span class="tag">{item.focus}</span>
+        </li>
+      ))}
+    </ul>
+
+  </div>
+</section>
+
+<style>
+  .community__grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  @media (min-width: 36em) {
+    .community__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 60em) {
+    .community__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .community__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-4) var(--space-6);
+    background-color: var(--color-bg-card);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-lg);
+  }
+
+  .community__name {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    color: var(--color-text-heading);
+  }
+</style>

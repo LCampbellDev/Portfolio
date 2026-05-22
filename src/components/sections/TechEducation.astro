@@ -1,0 +1,170 @@
+---
+/**
+ * TechEducation.astro
+ * Technical Education & Professional Development section.
+ */
+
+const courses = [
+  {
+    provider: 'Code First Girls',
+    title: 'Degree in Software Engineering',
+    summary: 'Software engineering programme focused on Python, SQL, APIs, backend development, data structures, debugging, and algorithmic thinking.',
+    topics: [
+      'APIs and microservices',
+      'Object-oriented programming',
+      'Data structures and libraries',
+      'Recursion and linked lists',
+      'Debugging and algorithm design',
+    ],
+  },
+  {
+    provider: 'Code First Girls',
+    title: 'Masters in DevOps & Cloud Engineering',
+    summary: 'Training in cloud platforms, deployment workflows, infrastructure, containers, and security fundamentals.',
+    topics: [
+      'AWS, Azure, and Google Cloud fundamentals',
+      'Security and compliance',
+      'Docker and containerisation',
+      'Kubernetes and deployments',
+      'Infrastructure and Terraform fundamentals',
+    ],
+  },
+  {
+    provider: 'AI Workshop',
+    title: 'SQL Bootcamp',
+    summary: '14-week hands-on SQL programme covering production-grade querying, joins, CTEs, window functions, AI-assisted workflows, and cloud-based development using GitHub Codespaces.',
+    topics: [],
+  },
+  {
+    provider: "The Coders' Guild",
+    title: 'Project Management with Digital Tools & AI',
+    year: '2025',
+    summary: 'Training in delivery workflows, Agile methodologies, and digital collaboration tools.',
+    topics: [
+      'Agile and Waterfall delivery',
+      'Scrum, Kanban, and Scrumban',
+      'Jira, ClickUp, and Trello',
+      'Agile ceremonies and delivery practices',
+    ],
+  },
+];
+---
+
+<section class="tech-education section section--muted" id="tech-education" aria-labelledby="tech-education-heading">
+  <div class="container">
+
+    <div class="section-header">
+      <p class="eyebrow">Learning</p>
+      <h2 class="section-header__title" id="tech-education-heading">
+        Technical education &amp; professional development
+      </h2>
+      <div class="divider" aria-hidden="true"></div>
+    </div>
+
+    <ol class="tech-education__list" role="list">
+      {courses.map((course) => (
+        <li class="tech-education__item">
+          <div class="tech-education__meta">
+            <span class="tag">{course.provider}</span>
+            {course.year && <time class="tech-education__year">{course.year}</time>}
+          </div>
+          <div class="tech-education__content">
+            <h3 class="tech-education__title">{course.title}</h3>
+            <p class="tech-education__summary">{course.summary}</p>
+            {course.topics.length > 0 && (
+              <ul class="tech-education__topics" role="list" aria-label={`Topics covered in ${course.title}`}>
+                {course.topics.map((topic) => (
+                  <li class="tech-education__topic">{topic}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </li>
+      ))}
+    </ol>
+
+  </div>
+</section>
+
+<style>
+  .tech-education__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tech-education__item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    padding-block: var(--space-8);
+    border-top: var(--border-width) solid var(--color-border);
+  }
+
+  .tech-education__item:last-child {
+    border-bottom: var(--border-width) solid var(--color-border);
+  }
+
+  @media (min-width: 48em) {
+    .tech-education__item {
+      grid-template-columns: 14rem 1fr;
+      gap: var(--space-10);
+      align-items: start;
+    }
+  }
+
+  .tech-education__meta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding-top: var(--space-1);
+  }
+
+  .tech-education__year {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    font-weight: var(--weight-medium);
+  }
+
+  .tech-education__title {
+    font-size: var(--text-lg);
+    font-weight: var(--weight-bold);
+    color: var(--color-text-heading);
+    margin-bottom: var(--space-2);
+    line-height: var(--leading-snug);
+  }
+
+  .tech-education__summary {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    max-width: 60ch;
+    margin: 0 0 var(--space-4);
+  }
+
+  .tech-education__topics {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .tech-education__topic {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    padding-left: var(--space-4);
+    position: relative;
+  }
+
+  .tech-education__topic::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 6px;
+    height: 6px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-accent-subtle);
+  }
+</style>
