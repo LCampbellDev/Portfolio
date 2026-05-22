@@ -7,9 +7,9 @@
 
 const projects = [
   {
-    title: 'MEDICATION & SUPPLEMENT TRACKER',
+    title: 'Medication Tracker',
     summary:
-    'Full-stack medication management application designed to support stock tracking, expiry management, and reorder forecasting.',
+    'Full-stack medication management application designed to support stock tracking, expiry management, and forecasting.',
     problem: 'Managing medication routines across multiple products, batches, and expiry dates can create unnecessary cognitive load and increase the risk of waste or missed supplies.',
     stack: ['Python', 'MySQL', 'React', 'Python unittest'],
     engineeringFocus: 'Structured data modelling, business logic, accessibility-first UX, maintainable architecture',
@@ -18,15 +18,15 @@ const projects = [
   },
   {
     title: 'Task Management API',
-    summary:'Backend API for structured task tracking and casework-style workflow management.',
-    problem: 'Manual task coordination and inconsistent tracking create inefficiencies and reduce reliability in time-sensitive workflows.',
-    stack: ['P', 'Node.js', 'Express', 'PostgreSQL', 'Jest'],
-    engineeringFocus: 'API design, layered architecture, testing, secure coding, maintainability',
+    summary:'Backend API for structured task tracking and complex casework-style workflow management.',
+    problem:'Manual task coordination and inconsistent tracking create inefficiencies and reduce reliability in complex, time-sensitive workflows.',
+    stack: ['Python', 'MySQL', 'React', 'Input validation'],
+    engineeringFocus: 'API design, layered architecture, testing, secure coding, maintainability, and reliability',
     github: 'https://github.com/lcampbelldev',
     demo: null,
   },
   {
-    title: 'Language Learning Application',
+    title: 'Language Learning App',
     summary: 'Full-stack language learning platform combining structured curriculum content with external API integration.',
     problem: 'Many language learning platforms prioritise isolated vocabulary practice over structured progression and accessible content organisation.',
     stack: ['React', 'Next.js', 'JavaScript', 'APIs', 'Jest', 'React Testing Library'],
@@ -138,6 +138,8 @@ const projects = [
  
   .projects__card-body {
     flex: 1;
+    display: flex;
+    flex-direction: column;
   }
  
   .projects__card-title {
