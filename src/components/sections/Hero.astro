@@ -11,10 +11,10 @@
     <div class="hero__inner">
 
       <div class="hero__content">
-        <p class="eyebrow">Software Engineer</p>
+        <p class="eyebrow">Software Engineer &amp; Educator</p>
 
         <h1 class="hero__heading" id="hero-heading">
-          L Campbell
+          Larna<br />Campbell
         </h1>
 
         <div class="divider" aria-hidden="true"></div>
@@ -90,9 +90,16 @@
         </ul>
       </div>
 
-      <!-- Decorative accent block — hidden from assistive tech -->
-      <div class="hero__accent" aria-hidden="true">
-        <div class="hero__accent-block"></div>
+      <!-- Avatar -->
+      <div class="hero__avatar" aria-hidden="false">
+        <img
+          src="/avatar.png"
+          alt="Illustrated portrait of Larna Campbell, smiling, wearing glasses and a black t-shirt with a rainbow logo, against a teal and purple gradient background"
+          class="hero__avatar-img"
+          width="280"
+          height="280"
+          loading="eager"
+        />
       </div>
 
     </div>
@@ -187,44 +194,27 @@
     text-decoration: none;
   }
 
-  /* Decorative accent block */
-  .hero__accent {
+  /* Avatar */
+  .hero__avatar {
     display: none;
   }
 
   @media (min-width: 56em) {
-    .hero__accent {
+    .hero__avatar {
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
     }
+  }
 
-    .hero__accent-block {
-      width: 14rem;
-      height: 14rem;
-      border-radius: var(--radius-xl);
-      background-color: var(--color-accent-light);
-      border: 2px solid var(--color-accent-subtle);
-      position: relative;
-    }
-
-    /* Offset inner square — geometric, calm */
-    .hero__accent-block::before {
-      content: '';
-      position: absolute;
-      inset: 1.5rem;
-      border-radius: var(--radius-lg);
-      border: 2px solid var(--color-accent);
-      opacity: 0.3;
-    }
-
-    .hero__accent-block::after {
-      content: '';
-      position: absolute;
-      inset: 3rem;
-      border-radius: var(--radius-md);
-      background-color: var(--color-accent);
-      opacity: 0.15;
-    }
+  .hero__avatar-img {
+    width: 16rem;
+    height: 16rem;
+    border-radius: var(--radius-xl);
+    object-fit: cover;
+    object-position: center top;
+    border: 3px solid var(--color-accent-subtle);
+    box-shadow: var(--shadow-lg);
   }
 </style>
