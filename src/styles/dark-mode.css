@@ -41,6 +41,10 @@
   --color-text-secondary: #b8b5af;
   --color-text-muted:     #afaca8;
   --color-text-on-accent:  #1a1917;   /* dark text on light teal button — 9.5:1 ✓ AAA */
+  
+  --color-tag-text:       #f0efeb;
+  --color-tag-bg:         #164e4a;
+  --color-tag-border:     #2dd4c8;
 
   --color-border:         #3d3c39;
   --color-border-strong:  #524f4c;
@@ -81,6 +85,10 @@
     --color-text-secondary: #b8b5af;
     --color-text-muted:     #afaca8;
     --color-text-on-accent:  #1a1917;   /* dark text on light teal button — 9.5:1 ✓ AAA */
+
+    --color-tag-text:       #f0efeb;
+    --color-tag-bg:         #164e4a;
+    --color-tag-border:     #2dd4c8;
 
     --color-border:         #3d3c39;
     --color-border-strong:  #524f4c;

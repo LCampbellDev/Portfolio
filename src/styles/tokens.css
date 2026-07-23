@@ -37,6 +37,11 @@
   --color-accent-subtle:  #b3dbd8;   /* decorative borders, lines */
   --color-card:           #fcfbf9;   /* card background — 7.28:1 with #065f59 ✓ AAA */
 
+  /* Tag and chip colours */
+--color-tag-text:       #033a36;
+--color-tag-bg:         #d8efed;
+--color-tag-border:     #065f59;
+
   /* Focus ring — high visibility, meets 3:1 non-text contrast */
   --color-focus:          #065f59;   /* was #0a7a72 */
   --color-focus-bg:       #ffdd00;   /* GOV.UK-style yellow focus bg */
