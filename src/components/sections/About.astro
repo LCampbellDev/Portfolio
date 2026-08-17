@@ -4,76 +4,62 @@
  * About section — professional summary, career story, values.
  * Tech-first framing with education as a strength.
  */
+
+const storyParagraphs = [
+  'Hi, I’m Larna,',
+  'A full-stack software engineer based in the UK.',
+  'My earlier career covered education leadership and digital learning design. That work strengthened my interest in systems, communication and clear information.',
+  'During my MA in Digital Education, I especially enjoyed designing digital products. I wanted to build systems from scratch, without the limits of fixed platforms.',
+  'Learning software engineering gave me that opportunity. I loved the creativity and challenge of building, testing and debugging software.',
+  'I now build applications with JavaScript, TypeScript, React, Node.js, Python and SQL. I focus on accessible software that works under real-world pressure and cognitive load.',
+];
+
+const principles = [
+  'Systems thinking',
+  'Clear communication',
+  'Collaborative problem-solving',
+  'Inclusion by design',
+  'Reducing friction',
+  'Clear, maintainable code',
+  'Tech stack flexibility',
+];
+
 ---
  
 <section class="about section section--muted" id="about" aria-labelledby="about-heading">
   <div class="container">
  
     <div class="section-header">
-      <p class="eyebrow">About</p>
       <h2 class="section-header__title" id="about-heading">
-        Building systems that work for people
+        From education to software engineering
       </h2>
       <div class="divider" aria-hidden="true"></div>
     </div>
  
+
     <div class="about__grid">
  
       <div class="about__primary">
-        <p>
-          Hi, I'm Larna.
-        </p>
-        <p>
-          I’m a software engineer based in the UK, building full-stack applications and structured data systems using JavaScript, React, Node.js, Python and SQL. 
-        </p>
-        <p>
-          My work focuses on accessibility, maintainable architecture, and designing software that remains usable in real-world conditions, particularly where users are managing complexity, time pressure, or cognitive load.
-        </p>
-        <p>
-          My experience prior to software engineering is in education leadership and digital learning design. That background strengthened my systems thinking, communication skills, and understanding of how information design affects usability and decision-making.
-        </p>
-        <p>
-          After completing an MA in Digital Education, I realised I particularly enjoyed designing digital products and wanted to learn software engineering so I could build systems from scratch, rather than relying on platforms with fixed constraints.
-        </p>
-        <p>
-          As I developed my engineering skills, I found I genuinely enjoyed the creativity, challenge, and satisfaction of building, testing, debugging, and iterating on products, especially when working to make them accessible and usable for the widest range of users possible.
-        </p>
-        <p>
-          Alongside continuing to work in education, I now build full-stack applications focused on usability, accessibility, and structured problem solving, applying testing, API integration, secure coding practices, and iterative delivery to create reliable, maintainable systems.
-        </p>
-      </div>
+    <div class="about__story">
+    {storyParagraphs.map((paragraph) => (
+    <p>{paragraph}</p>
+  ))}
+    </div>
+  </div>      
  
-      <aside class="about__values" aria-label="Core values">
-        <h3 class="about__values-heading">What I care about</h3>
+      <aside class="about__how_i_work"  aria-label="Core values"> 
+        <h3 class="about__values-heading">Core principles</h3>
         <ul role="list" class="about__values-list">
-          <li class="about__value">
-            <span class="about__value-icon" aria-hidden="true">⬡</span>
-            <div>
-              <strong>Accessibility-first</strong>
-              <p>Building accessibility into architecture, interaction, and testing from the beginning.</p>
-            </div>
-          </li>
-          <li class="about__value">
-            <span class="about__value-icon" aria-hidden="true">⬡</span>
-            <div>
-              <strong>User-centred systems</strong>
-              <p>Designing systems that remain usable under time pressure, fatigue, and real-world constraints.</p>
-            </div>
-          </li>
-          <li class="about__value">
-            <span class="about__value-icon" aria-hidden="true">⬡</span>
-            <div>
-              <strong>Clear, maintainable code</strong>
-              <p>Modular, readable systems designed for long-term maintainability.</p>
-            </div>
-          </li>
-          <li class="about__value">
-            <span class="about__value-icon" aria-hidden="true">⬡</span>
-            <div>
-              <strong>Inclusion by design</strong>
-              <p>Designing with a broad range of users, access needs, and working conditions in mind, including disabled, neurodivergent, and chronically ill users.</p>            </div>
-          </li>
-        </ul>
+  {principles.map((principle) => (
+    <li class="about__value">
+      <span class="about__value-icon" aria-hidden="true">⬡</span>
+
+      <div>
+        <strong>{principle}</strong>
+      </div>
+    </li>
+  ))}
+</ul>
       </aside>
  
     </div>
@@ -87,11 +73,11 @@
     gap: var(--space-12);
   }
  
-  @media (min-width: 56em) {
-    .about__grid {
-      grid-template-columns: 1fr 18rem;
-      gap: var(--space-16);
-      align-items: start;
+ @media (min-width: 56em) {
+  .about__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-16);
+    align-items: start;
     }
   }
  
@@ -99,6 +85,17 @@
   .about__primary p {
     max-width: 60ch;
   }
+
+  .about__story {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.about__story p {
+  max-width: 65ch;
+  margin: 0;
+}
  
   /* Values sidebar */
   .about__values {

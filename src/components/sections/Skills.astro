@@ -7,41 +7,43 @@
  
 const skillGroups = [
   {
-    heading: 'Languages',
+    heading: 'Programming & web',
     skills: ['JavaScript', 'TypeScript', 'Python', 'SQL', 'HTML', 'CSS'],
   },
   {
     heading: 'Frameworks & libraries',
-    skills: ['React', 'Astro', 'Node.js', 'Express', 'FastAPI', 'Next.js'],
+    skills: ['React', 'Node.js', 'Express', 'FastAPI', 'Flask', 'Next.js', 'Astro'],
   },
   {
-    heading: 'Databases',
-    skills: ['SQL', 'MySQL', 'MongoDB'],
+    heading: 'Data and APIs',
+    skills: ['SQL', 'MySQL', 'Database design', 'Data security', 'Password hashing', 'Parameterised queries', 'REST APIs', 'API integration', 'API design', 'Input validation', 'Error handling'],
   },
   {
-    heading: 'Testing',
-    skills: ['React Testing Library', 'Jest', 'Supertest', 'Pytest', 'Python unittest'],
+    heading: 'Testing & quality',
+    skills: ['Unit testing', 'Integration testing', 'End-to-end testing', 'Regression testing', 'Accessibility testing', 'React Testing Library', 'Jest', 'Pytest', 'Python unittest', 'ESLint', 'Prettier'],
   },
   {
-    heading: 'Cloud & DevOps',
+    heading: 'DevOps & Cloud',
     skills: [
-      'AWS fundamentals',
-      'Cloud computing',
-      'Docker',
-      'Containerisation',
-      'Linux CLI',
+      'AWS: S3, EC2, ECR and ECS',
+      'Docker Containerisation',
+      'Kubernetes', 
+      'Terraform',
       'CI/CD',
+      'GitHub Actions',
       'Vercel',
+      'Infrastructure fundamentals',
     ],
   },
   {
-    heading: 'Tools & delivery',
-    skills: ['Git', 'GitHub', 'Postman', 'Agile', 'Jira', 'ClickUp', 'Figma', 'VS Code', 'API integration', 'REST APIs'],
+    heading: 'Accessibility & design',
+    skills: ['WCAG 2.2', 'WCAG 3 draft awareness', 'Semantic HTML', 'ARIA', 'Keyboard navigation', 'Screen reader testing','Cognitive accessibility', 'Lighthouse', 'GOV.UK Design System', 'User research with disabled users'],
   },
   {
-    heading: 'Accessibility',
-    skills: ['WCAG 2.2', 'ARIA', 'Keyboard navigation', 'Screen reader testing','Cognitive accessibility', 'Lighthouse', 'GOV.UK Design System', 'User research with disabled users'],
+    heading: 'Tools & delivery',
+    skills: ['Git', 'GitHub', 'Postman', 'Agile', 'Jira', 'ClickUp', 'VS Code', 'Pair and group programming', 'Pull requests', 'Code review', 'Technical documentation'],
   },
+  
 ];
 ---
  
@@ -49,7 +51,6 @@ const skillGroups = [
   <div class="container">
  
     <div class="section-header">
-      <p class="eyebrow">Skills</p>
       <h2 class="section-header__title" id="skills-heading">Technical skills</h2>
       <div class="divider" aria-hidden="true"></div>
     </div>
