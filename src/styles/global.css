@@ -48,7 +48,7 @@ h6 { font-size: var(--text-md); }
 
 /* Prose / body text */
 p {
-  max-width: var(--container-prose);
+  max-width: min(100%, var(--container-prose));
   line-height: var(--leading-relaxed);
   color: var(--color-text);
 }
@@ -81,6 +81,7 @@ a:hover {
   max-width: var(--container-max);
   margin-inline: auto;
   padding-inline: var(--container-padding);
+  min-width: 0;
 }
 
 .container--narrow {
@@ -94,14 +95,19 @@ a:hover {
 /* Section wrapper */
 .section {
   padding-block: var(--section-padding-y);
+  background-color: var(--color-bg-section);
 }
 
 .section--muted {
-  background-color: var(--color-bg-subtle);
+  background-color: var(--color-bg-section-muted);
 }
 
 .section--accent {
   background-color: var(--color-accent-light);
+}
+
+section[id] {
+  scroll-margin-top: var(--anchor-offset);
 }
 
 /* ----------------------------------------------------------
@@ -129,19 +135,23 @@ a:hover {
 
 /* Section heading group */
 .section-header {
-  margin-bottom: var(--space-12);
+  margin-bottom: clamp(
+    var(--space-8),
+    5vw,
+    var(--space-12)
+  );
 }
 
 .section-header__title {
-  margin-top: var(--space-2);
+  margin: 0;
 }
 
 .section-header__description {
+  max-width: min(100%, var(--container-prose));
   margin-top: var(--space-4);
   font-size: var(--text-md);
   line-height: var(--leading-relaxed);
   color: var(--color-text-secondary);
-  max-width: 48ch;
 }
 
 /* ----------------------------------------------------------

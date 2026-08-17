@@ -38,7 +38,7 @@ body {
   min-height: 100dvh;
   line-height: var(--leading-normal);
   -webkit-font-smoothing: antialiased;
-  moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Images and media */

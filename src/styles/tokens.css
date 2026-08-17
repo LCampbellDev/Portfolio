@@ -14,9 +14,9 @@
    * COLOUR: Neutrals
    * ---------------------------------------------------------- */
 
-  --color-off-white:    #f8f7f4;
-  --color-grey-50:      #f7f7f6;   /* page background */
-  --color-grey-100:     #eeede9;   /* subtle section bg */
+  --color-off-white:    #f8f7f4;   /* page background */
+  --color-grey-50:      #f7f7f6;   /* very subtle neutral */
+  --color-grey-100:     #eeede9;   /* muted section background */
   --color-grey-200:     #dddcd8;   /* borders, dividers */
   --color-grey-400:     #9b9992;   /* decorative/non-text only — 2.66:1 fails AA */
   --color-grey-600:     #5c5a55;   /* secondary text — 8.5:1 ✓ AAA */
@@ -54,10 +54,14 @@
    * COLOUR: Semantic aliases
    * ---------------------------------------------------------- */
 
-  --color-bg:             var(--color-off-white);
-  --color-bg-subtle:      var(--color-grey-50);
-  --color-bg-muted:       var(--color-grey-100);
-  --color-bg-card:        var(--color-card);  
+  --color-bg: var(--color-off-white);
+  --color-bg-subtle: var(--color-grey-100);
+  --color-bg-muted: var(--color-grey-100);
+  --color-bg-card: var(--color-card);
+
+  /* Alternating page section backgrounds */
+  --color-bg-section: var(--color-bg);
+  --color-bg-section-muted: var(--color-bg-subtle);
 
   --color-text:           var(--color-grey-800);
   --color-text-heading:   var(--color-grey-900);
@@ -132,18 +136,35 @@
   --space-24:  6rem;      /* 96px */
   --space-32:  8rem;      /* 128px */
 
-  /* Section padding — generous vertical rhythm */
-  --section-padding-y:      var(--space-20);
-  --section-padding-y-sm:   var(--space-16);
+  /* Section padding — fluid across viewport sizes and zoom levels */
+  --section-padding-y: clamp(
+    var(--space-12),
+    7vw,
+    var(--space-20)
+  );
+
+--section-padding-y-sm: clamp(
+    var(--space-10),
+    5vw,
+    var(--space-16)
+  );
 
   /* ----------------------------------------------------------
    * LAYOUT
    * ---------------------------------------------------------- */
 
-  --container-max:      72rem;    /* 1152px — comfortable reading width */
-  --container-prose:    42rem;    /* 672px — optimal prose line length */
-  --container-narrow:   56rem;    /* 896px */
-  --container-padding:  var(--space-6);
+  --container-max: 72rem;
+  --container-prose: 42rem;
+  --container-narrow: 56rem;
+
+  --container-padding: clamp(
+    var(--space-4),
+    3vw,
+    var(--space-8)
+  );
+
+  /* Space above anchored sections for the sticky header */
+  --anchor-offset: 6rem;
 
   /* ----------------------------------------------------------
    * BORDERS & RADIUS

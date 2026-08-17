@@ -70,10 +70,6 @@
 /* OS-level dark mode preference — applies when no manual override is set */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    
-    .site-footer__monogram {
-    color: #1a1917;
-    }
 
     --color-bg:             #1a1917;
     --color-bg-subtle:      #232220;
