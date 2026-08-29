@@ -47,12 +47,12 @@ const principles = [
     </div>
   </div>      
  
-      <aside class="about__how_i_work"  aria-label="Core values"> 
-        <h3 class="about__values-heading">Core principles</h3>
-        <ul role="list" class="about__values-list">
+      <section class="about__principles"> 
+        <h3 class="about__principles-heading">Core principles</h3>
+        <ul role="list" class="about__principles-list">
   {principles.map((principle) => (
-    <li class="about__value">
-      <span class="about__value-icon" aria-hidden="true">⬡</span>
+    <li class="about__principle">
+      <span class="about__principle-icon" aria-hidden="true">⬡</span>
 
       <div>
         <strong>{principle}</strong>
@@ -60,7 +60,7 @@ const principles = [
     </li>
   ))}
 </ul>
-      </aside>
+</section>
  
     </div>
   </div>
@@ -97,15 +97,15 @@ const principles = [
   margin: 0;
 }
  
-  /* Values sidebar */
-  .about__values {
+  /* Principles sidebar */
+  .about__principles {
     background-color: var(--color-white);
     border: var(--border-width) solid var(--color-border);
     border-radius: var(--radius-lg);
     padding: var(--space-6);
   }
  
-  .about__values-heading {
+  .about__principles-heading {
     font-size: var(--text-sm);
     font-weight: var(--weight-bold);
     letter-spacing: var(--tracking-widest);
@@ -114,27 +114,27 @@ const principles = [
     margin-bottom: var(--space-5);
   }
  
-  .about__values-list {
+  .about__principles-list {
     display: flex;
     flex-direction: column;
     gap: var(--space-5);
     list-style: none;
   }
  
-  .about__value {
+  .about__principle {
     display: flex;
     gap: var(--space-3);
     align-items: flex-start;
   }
  
-  .about__value-icon {
+  .about__principle-icon {
     color: var(--color-accent);
     font-size: var(--text-md);
     line-height: 1.4;
     flex-shrink: 0;
   }
  
-  .about__value strong {
+  .about__principle strong {
     display: block;
     font-size: var(--text-sm);
     font-weight: var(--weight-bold);
@@ -142,7 +142,7 @@ const principles = [
     margin-bottom: var(--space-1);
   }
  
-  .about__value p {
+  .about__principle p {
     font-size: var(--text-sm);
     color: var(--color-text-secondary);
     line-height: var(--leading-normal);
