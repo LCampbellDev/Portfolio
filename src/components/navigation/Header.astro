@@ -7,7 +7,6 @@
  * - Desktop horizontal nav
  * - Mobile hamburger menu (accessible, keyboard-navigable)
  * - Active link highlighting
- * - Transparent → white on scroll
  *
  * Accessibility:
  * - <header> landmark with aria-label
@@ -562,6 +561,14 @@ const navLinks = [
       transform var(--transition-base),
       opacity var(--transition-fast);
   }
+
+  @media (forced-colors: active) {
+  .site-header__menu-icon span {
+    background-color: ButtonText;
+    forced-color-adjust: none;
+    }
+  }
+
 
   /* Active (X) state */
   .site-header__menu-btn.is-active .site-header__menu-icon span:nth-child(1) {
