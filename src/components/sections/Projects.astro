@@ -15,10 +15,9 @@ const projects = [
       'Finding and tracking events across dates, categories and venues can require repeated searches.',
     description: [
       'Culture Finder began as a six-person project during an intensive Python and SQL course. We built a Flask REST API, MySQL database and console client. The application used the Ticketmaster Discovery API.',
-      'I helped design and build the client, API functions and user flows. I led a client refactor after agreeing the change with the team. The refactor separated the interface, workflows and API calls into clear modules.',
+      'During development, I designed and built the console client and user workflows using placeholder functions so work could progress in parallel. I then integrated the Flask API routes as team members completed them. Later, I led a client refactor after agreeing the change with the team. The refactor separated the interface, workflows and API calls into clear modules.',
       'My work included testing, error handling, documentation and system integration. I also supported team delivery through pull requests and code review.',
-      'After the course, I independently built an accessible Next.js frontend. The frontend consumes the Flask API. Together, the projects show Culture Finder’s development from a console MVP to an accessible frontend.',
-      'The team delivered the original MVP on time and received a 94% project score.',
+      'After the course, I independently built an accessible Next.js frontend. The frontend consumes the Flask API. Together, the projects show Culture Finder’s evolution from a console interface to an accessible web frontend.',
     ],
     stack: [
       'Next.js',
@@ -36,11 +35,13 @@ const projects = [
       'Prettier',
     ],
     engineeringFocus: [
-      'Clear separation between the interface, API client and backend',
-      'Accessible search and wishlist journeys',
-      'Validation, error handling and resilient empty states',
-      'Unit, integration and regression testing',
-      'Feature branches, pull requests and code review',
+      'Layered separation between interfaces, API clients and the Flask backend',
+      'Full-stack integration from the Next.js frontend through the Flask REST API to MySQL',
+      'Accessible search and wishlist user journeys',
+      'Input validation, error handling and resilient empty states',
+      'Unit, integration, regression and accessibility testing',
+      'Incremental frontend development with production builds, ESLint checks and Prettier formatting after each feature',
+      'Collaborative delivery using feature branches, pull requests and code review',
     ],
     links: [
       {
@@ -98,7 +99,7 @@ const projects = [
  
 
 <section
-  class="projects section section--muted"
+  class="projects section"
   id="projects"
   aria-labelledby="projects-heading"
 >
@@ -112,7 +113,7 @@ const projects = [
       <div class="divider" aria-hidden="true"></div>
 
       <p class="section-header__description">
-        A full-stack application focused on accessibility, usability and maintainable engineering.
+        A full-stack application designed and implemented with accessibility, usability and maintainability as priorities.
       </p>
     </div>
 
@@ -160,11 +161,13 @@ const projects = [
             </div>
           </div>
 
-          <footer class="projects__card-footer">
+          <div class="projects__card-footer">
+            <h4 class="label label--muted projects__tags-heading">
+              Technologies
+            </h4>
             <ul
               class="projects__tags"
               role="list"
-              aria-label={`Technologies used in ${project.title}`}
             >
               {project.stack.map((tech) => (
                 <li>
@@ -173,17 +176,14 @@ const projects = [
               ))}
             </ul>
 
-            <nav
-              class="projects__card-links"
-              aria-label={`${project.title} links`}
-            >
-              {project.links.map((link) => (
+            <ul class="projects__card-links" role="list">
+            {project.links.map((link) => (
+              <li>
                 <a
                   href={link.url}
                   class="btn btn--ghost projects__card-link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`View ${project.title} ${link.label} on GitHub (opens in new tab)`}
                 >
                   <svg
                     width="16"
@@ -196,10 +196,12 @@ const projects = [
                   </svg>
 
                   {link.label}
+                  <span class="sr-only"> (opens in new tab)</span>
                 </a>
+              </li>
               ))}
-            </nav>
-          </footer>
+            </ul>
+          </div>
 
         </li>
       ))}
@@ -211,9 +213,13 @@ const projects = [
 <style>
   .projects__grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-6);
     list-style: none;
+  }
+
+  .projects__tags-heading {
+  margin: 0;
   }
 
   /*
@@ -229,11 +235,17 @@ const projects = [
   .projects__card {
     display: flex;
     flex-direction: column;
-    padding: var(--space-6);
+    padding: clamp(
+    var(--space-4),
+    3vw,
+    var(--space-8)
+    );
+    min-width: 0;
   }
 
   .projects__card-body {
     flex: 1;
+    min-width: 0;
   }
 
   .projects__card-title {
@@ -291,6 +303,7 @@ const projects = [
     margin-top: var(--space-6);
     padding-top: var(--space-5);
     border-top: var(--border-width) solid var(--color-border);
+    min-width: 0;
   }
 
   .projects__tags {
@@ -304,6 +317,7 @@ const projects = [
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-2);
+    list-style: none;
   }
 
   .projects__card-link {
