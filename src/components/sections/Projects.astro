@@ -1,65 +1,61 @@
 ---
 /**
  * Projects.astro
- * Three featured project cards. 
+ * Three featured project cards.
  * Equal height on desktop, stacked on mobile.
  * - Updated to 1 featured project for now. Possibly return to 3 later.  If so alsu update title 'Featured project' to plural
  */
 
 const projects = [
   {
-    title: 'Culture Finder',
+    title: "Culture Finder",
     summary:
-      'An event discovery and wishlist application for finding events and planning future outings.',
+      "An event discovery and wishlist application for finding events and planning future outings.",
     problem:
-      'Finding and tracking events across dates, categories and venues can require repeated searches.',
+      "Finding and tracking events across dates, categories and venues can require repeated searches.",
     description: [
-      'Culture Finder began as a six-person project during an intensive Python and SQL course. We built a Flask REST API, MySQL database and console client. The application used the Ticketmaster Discovery API.',
-      'During development, I designed and built the console client and user workflows using placeholder functions so work could progress in parallel. I then integrated the Flask API routes as team members completed them. Later, I led a client refactor after agreeing the change with the team. The refactor separated the interface, workflows and API calls into clear modules.',
-      'My work included testing, error handling, documentation and system integration. I also supported team delivery through pull requests and code review.',
-      'After the course, I independently built an accessible Next.js frontend. The frontend consumes the Flask API. Together, the projects show Culture Finder’s evolution from a console interface to an accessible web frontend.',
+      "Culture Finder began as a six-person project during an intensive Python and SQL course. We built a Flask REST API, MySQL database and console client. The application used the Ticketmaster Discovery API.",
+      "During development, I designed and built the console client and user workflows using placeholder functions so work could progress in parallel. I then integrated the Flask API routes as team members completed them. Later, I led a client refactor after agreeing the change with the team. The refactor separated the interface, workflows and API calls into clear modules.",
+      "My work included testing, error handling, documentation and system integration. I also supported team delivery through pull requests and code review.",
+      "After the course, I independently built an accessible Next.js frontend. The frontend consumes the Flask API. Together, the projects show Culture Finder’s evolution from a console interface to an accessible web frontend.",
     ],
     stack: [
-      'Next.js',
-      'React',
-      'JavaScript',
-      'Python',
-      'Flask',
-      'MySQL',
-      'REST APIs',
-      'Python unittest',
-      'Pytest',
-      'Jest',
-      'React Testing Library',
-      'ESLint',
-      'Prettier',
+      "Next.js",
+      "React",
+      "JavaScript",
+      "Python",
+      "Flask",
+      "MySQL",
+      "REST APIs",
+      "Python unittest",
+      "Pytest",
+      "Jest",
+      "React Testing Library",
+      "ESLint",
+      "Prettier",
     ],
     engineeringFocus: [
-      'Layered separation between interfaces, API clients and the Flask backend',
-      'Full-stack integration from the Next.js frontend through the Flask REST API to MySQL',
-      'Accessible search and wishlist user journeys',
-      'Input validation, error handling and resilient empty states',
-      'Unit, integration, regression and accessibility testing',
-      'Incremental frontend development with production builds, ESLint checks and Prettier formatting after each feature',
-      'Collaborative delivery using feature branches, pull requests and code review',
+      "Layered separation between interfaces, API clients and the Flask backend",
+      "Full-stack integration from the Next.js frontend through the Flask REST API to MySQL",
+      "Accessible search and wishlist user journeys",
+      "Input validation, error handling and resilient empty states",
+      "Unit, integration, regression and accessibility testing",
+      "Incremental frontend development with production builds, ESLint checks and Prettier formatting after each feature",
+      "Collaborative delivery using feature branches, pull requests and code review",
     ],
     links: [
       {
-        label: 'Frontend repository',
-        url: 'https://github.com/LCampbellDev/culture-finder-pwa',
+        label: "Frontend repository",
+        url: "https://github.com/LCampbellDev/culture-finder-pwa",
       },
       {
-        label: 'Backend repository',
-        url: 'https://github.com/LCampbellDev/culture-finder-backend',
+        label: "Backend repository",
+        url: "https://github.com/LCampbellDev/culture-finder-backend",
       },
     ],
   },
 ];
-
-
-
 ---
- 
 
 <section
   class="projects section"
@@ -67,7 +63,6 @@ const projects = [
   aria-labelledby="projects-heading"
 >
   <div class="container">
-
     <div class="section-header">
       <h2 class="section-header__title" id="projects-heading">
         Featured project
@@ -76,105 +71,97 @@ const projects = [
       <div class="divider" aria-hidden="true"></div>
 
       <p class="section-header__description">
-        A full-stack application designed and implemented with accessibility, usability and maintainability as priorities.
+        A full-stack application designed and implemented with accessibility,
+        usability and maintainability as priorities.
       </p>
     </div>
 
     <ul class="projects__grid" role="list">
-      {projects.map((project) => (
-        <li class="card projects__card">
+      {
+        projects.map((project) => (
+          <li class="card projects__card">
+            <div class="projects__card-body">
+              <h3 class="projects__card-title">{project.title}</h3>
 
-          <div class="projects__card-body">
-            <h3 class="projects__card-title">
-              {project.title}
-            </h3>
+              <p class="projects__card-summary">{project.summary}</p>
 
-            <p class="projects__card-summary">
-              {project.summary}
-            </p>
+              <div class="projects__card-section">
+                <h4 class="label label--muted projects__card-section-heading">
+                  The problem
+                </h4>
 
-            <div class="projects__card-section">
-              <h4 class="label label--muted projects__card-section-heading">
-                The problem
-              </h4>
+                <p>{project.problem}</p>
+              </div>
 
-              <p>{project.problem}</p>
+              <div class="projects__card-section">
+                <h4 class="label label--muted projects__card-section-heading">
+                  The project
+                </h4>
+
+                {project.description.map((paragraph) => (
+                  <p>{paragraph}</p>
+                ))}
+              </div>
+
+              <div class="projects__card-section">
+                <h4 class="label label--muted projects__card-section-heading">
+                  Engineering focus
+                </h4>
+
+                <ul class="projects__focus-list">
+                  {project.engineeringFocus.map((focus) => (
+                    <li>{focus}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
-            <div class="projects__card-section">
-              <h4 class="label label--muted projects__card-section-heading">
-                The project
+            <div class="projects__card-footer">
+              <h4 class="label label--muted projects__tags-heading">
+                Technologies
               </h4>
+              <ul class="projects__tags" role="list">
+                {project.stack.map((tech) => (
+                  <li>
+                    <span class="tag">{tech}</span>
+                  </li>
+                ))}
+              </ul>
 
-              {project.description.map((paragraph) => (
-                <p>{paragraph}</p>
-              ))}
-            </div>
+              <ul class="projects__card-links" role="list">
+                {project.links.map((link) => (
+                  <li>
+                    <a
+                      href={link.url}
+                      class="btn btn--ghost projects__card-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                      </svg>
 
-            <div class="projects__card-section">
-              <h4 class="label label--muted projects__card-section-heading">
-                Engineering focus
-              </h4>
-
-              <ul class="projects__focus-list">
-                {project.engineeringFocus.map((focus) => (
-                  <li>{focus}</li>
+                      {link.label}
+                      <span class="sr-only"> (opens in new tab)</span>
+                    </a>
+                  </li>
                 ))}
               </ul>
             </div>
-          </div>
-
-          <div class="projects__card-footer">
-            <h4 class="label label--muted projects__tags-heading">
-              Technologies
-            </h4>
-            <ul
-              class="projects__tags"
-              role="list"
-            >
-              {project.stack.map((tech) => (
-                <li>
-                  <span class="tag">{tech}</span>
-                </li>
-              ))}
-            </ul>
-
-            <ul class="projects__card-links" role="list">
-            {project.links.map((link) => (
-              <li>
-                <a
-                  href={link.url}
-                  class="btn btn--ghost projects__card-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-                  </svg>
-
-                  {link.label}
-                  <span class="sr-only"> (opens in new tab)</span>
-                </a>
-              </li>
-              ))}
-            </ul>
-          </div>
-
-        </li>
-      ))}
+          </li>
+        ))
+      }
     </ul>
-
   </div>
 </section>
 
 <style>
-
   .projects .section-header__description {
     width: 100%;
     max-width: min(100%, var(--container-narrow));
@@ -187,7 +174,7 @@ const projects = [
   }
 
   .projects__tags-heading {
-  margin: 0;
+    margin: 0;
   }
 
   /*
@@ -203,11 +190,7 @@ const projects = [
   .projects__card {
     display: flex;
     flex-direction: column;
-    padding: clamp(
-    var(--space-4),
-    3vw,
-    var(--space-8)
-    );
+    padding: clamp(var(--space-4), 3vw, var(--space-8));
     min-width: 0;
   }
 

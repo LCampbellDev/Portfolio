@@ -5,12 +5,12 @@
  */
 
 const navLinks = [
-  { label: 'About',       href: '#about' },
-  { label: 'Projects',    href: '#projects' },
-  { label: 'Skills',      href: '#skills' },
-  { label: 'Experience',  href: '#experience' },
-  { label: 'Tech Education', href: '#tech-education' },
-  { label: 'Contact',     href: '#contact' },
+  { label: "About", href: "#about" },
+  { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
+  { label: "Experience", href: "#experience" },
+  { label: "Tech Education", href: "#tech-education" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const year = new Date().getFullYear();
@@ -18,9 +18,7 @@ const year = new Date().getFullYear();
 
 <footer class="site-footer">
   <div class="container">
-
     <div class="site-footer__inner">
-
       <div class="site-footer__brand">
         <a href="/" class="site-footer__wordmark">
           <span class="site-footer__monogram" aria-hidden="true">LC</span>
@@ -33,24 +31,26 @@ const year = new Date().getFullYear();
 
       <nav class="site-footer__nav" aria-label="Page Sections">
         <ul role="list" class="site-footer__nav-list">
-          {navLinks.map((link) => (
-            <li>
-              <a href={link.href} class="site-footer__nav-link">{link.label}</a>
-            </li>
-          ))}
+          {
+            navLinks.map((link) => (
+              <li>
+                <a href={link.href} class="site-footer__nav-link">
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </nav>
-
     </div>
 
     <div class="site-footer__bottom">
-    
       <p class="site-footer__a11y">
-        I aim to make this site accessible and meet at least WCAG 2.2 AA.
-        If you find a barrier, please{' '}
+        I aim to make this site accessible and meet at least WCAG 2.2 AA. If you
+        find a barrier, please{" "}
         <a href="mailto:larna@lcampbell.dev">let me know.</a>
       </p>
-      
+
       <a
         href="https://github.com/LCampbellDev/Portfolio"
         class="site-footer__source-link"
@@ -67,9 +67,8 @@ const year = new Date().getFullYear();
         </p>
 
         <a href="#top" class="site-footer__back-to-top">Back to top</a>
-      </div>      
+      </div>
     </div>
-
   </div>
 </footer>
 
@@ -115,12 +114,12 @@ const year = new Date().getFullYear();
   @media (min-width: 60em) {
     .site-footer__nav {
       display: none;
-  }
+    }
 
-  .site-footer__inner {
-    grid-template-columns: 1fr;
+    .site-footer__inner {
+      grid-template-columns: 1fr;
+    }
   }
-}
 
   /* Brand */
   .site-footer__wordmark {
@@ -231,37 +230,37 @@ const year = new Date().getFullYear();
   }
 
   .site-footer__back-to-top {
-  color: var(--color-footer-link);
-  text-decoration-color: currentColor;
-  margin-left: 0;
-  align-self: center;}
+    color: var(--color-footer-link);
+    text-decoration-color: currentColor;
+    margin-left: 0;
+    align-self: center;
+  }
 
-.site-footer__back-to-top:hover {
-  color: var(--color-white);
-}
-.site-footer__meta {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-4);
-  width: 100%;
-  margin-top: var(--space-2);
-}
-
-@media (min-width: 48em) {
+  .site-footer__back-to-top:hover {
+    color: var(--color-white);
+  }
   .site-footer__meta {
-    flex-direction: row;
-    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+    width: 100%;
+    margin-top: var(--space-2);
   }
 
-  .site-footer__copyright {
-    width: auto;
-    text-align: left;
-  }
+  @media (min-width: 48em) {
+    .site-footer__meta {
+      flex-direction: row;
+      justify-content: space-between;
+    }
 
-  .site-footer__back-to-top {
-    align-self: auto;
-  }
-}
+    .site-footer__copyright {
+      width: auto;
+      text-align: left;
+    }
 
+    .site-footer__back-to-top {
+      align-self: auto;
+    }
+  }
 </style>

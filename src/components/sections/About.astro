@@ -6,94 +6,95 @@
  */
 
 const storyParagraphs = [
-  'Hi, I’m Larna,',
-  'A full-stack software engineer based in the UK.',
-  'My earlier career covered education leadership and digital learning design. That work strengthened my interest in systems, communication and clear information.',
-  'During my MA in Digital Education, I especially enjoyed designing digital products. I wanted to build systems from scratch, without the limits of fixed platforms.',
-  'Learning software engineering gave me that opportunity. I loved the creativity and challenge of building, testing and debugging software.',
-  'I now build applications with JavaScript, TypeScript, React, Node.js, Python and SQL. I focus on accessible software that works under real-world pressure and cognitive load.',
+  "Hi, I’m Larna,",
+  "A full-stack software engineer based in the UK.",
+  "My earlier career covered education leadership and digital learning design. That work strengthened my interest in systems, communication and clear information.",
+  "During my MA in Digital Education, I especially enjoyed designing digital products. I wanted to build systems from scratch, without the limits of fixed platforms.",
+  "Learning software engineering gave me that opportunity. I loved the creativity and challenge of building, testing and debugging software.",
+  "I now build applications with JavaScript, TypeScript, React, Node.js, Python and SQL. I focus on accessible software that works under real-world pressure and cognitive load.",
 ];
 
 const principles = [
-  'Systems thinking',
-  'Clear communication',
-  'Collaborative problem-solving',
-  'Inclusion by design',
-  'Reducing friction',
-  'Clear, maintainable code',
-  'Tech stack flexibility',
+  "Systems thinking",
+  "Clear communication",
+  "Collaborative problem-solving",
+  "Inclusion by design",
+  "Reducing friction",
+  "Clear, maintainable code",
+  "Tech stack flexibility",
 ];
-
 ---
- 
-<section class="about section section--muted" id="about" aria-labelledby="about-heading">
+
+<section
+  class="about section section--muted"
+  id="about"
+  aria-labelledby="about-heading"
+>
   <div class="container">
- 
     <div class="section-header">
       <h2 class="section-header__title" id="about-heading">
         From education to software engineering
       </h2>
       <div class="divider" aria-hidden="true"></div>
     </div>
- 
 
     <div class="about__grid">
- 
       <div class="about__primary">
-    <div class="about__story">
-    {storyParagraphs.map((paragraph) => (
-    <p>{paragraph}</p>
-  ))}
-    </div>
-  </div>      
- 
-      <section class="about__principles"> 
+        <div class="about__story">
+          {storyParagraphs.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </div>
+
+      <section class="about__principles">
         <h3 class="about__principles-heading">Core principles</h3>
         <ul role="list" class="about__principles-list">
-  {principles.map((principle) => (
-    <li class="about__principle">
-      <span class="about__principle-icon" aria-hidden="true">⬡</span>
+          {
+            principles.map((principle) => (
+              <li class="about__principle">
+                <span class="about__principle-icon" aria-hidden="true">
+                  ⬡
+                </span>
 
-      <div>
-        <strong>{principle}</strong>
-      </div>
-    </li>
-  ))}
-</ul>
-</section>
- 
+                <div>
+                  <strong>{principle}</strong>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
     </div>
   </div>
 </section>
- 
+
 <style>
   .about__grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-12);
   }
- 
- @media (min-width: 56em) {
-  .about__grid {
-    grid-template-columns:
-      minmax(0, 3fr)
-      minmax(18rem, 2fr);
-    gap: var(--space-16);
-    align-items: start;
-  }
-}
- 
-.about__story {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-}
 
-.about__story p {
-  max-width: 75ch;
-  margin: 0;
-}
- 
+  @media (min-width: 56em) {
+    .about__grid {
+      grid-template-columns:
+        minmax(0, 3fr)
+        minmax(18rem, 2fr);
+      gap: var(--space-16);
+      align-items: start;
+    }
+  }
+
+  .about__story {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .about__story p {
+    max-width: 75ch;
+    margin: 0;
+  }
+
   /* Principles sidebar */
   .about__principles {
     background-color: var(--color-bg-card);
@@ -101,7 +102,7 @@ const principles = [
     border-radius: var(--radius-lg);
     padding: var(--space-6);
   }
- 
+
   .about__principles-heading {
     font-size: var(--text-sm);
     font-weight: var(--weight-bold);
@@ -110,30 +111,30 @@ const principles = [
     color: var(--color-text-secondary);
     margin-bottom: var(--space-5);
   }
- 
+
   .about__principles-list {
     display: flex;
     flex-direction: column;
     gap: var(--space-5);
     list-style: none;
   }
- 
-  .about__principles-list > .about__principle {
-  display: grid;
-  grid-template-columns: 1.25rem minmax(0, 1fr);
-  align-items: start;
-  gap: var(--space-3);
-  min-width: 0;
-}
 
-.about__principle-icon {
-  display: block;
-  color: var(--color-accent);
-  font-size: var(--text-md);
-  line-height: 1;
-  margin-top: 0.2em;
-}
- 
+  .about__principles-list > .about__principle {
+    display: grid;
+    grid-template-columns: 1.25rem minmax(0, 1fr);
+    align-items: start;
+    gap: var(--space-3);
+    min-width: 0;
+  }
+
+  .about__principle-icon {
+    display: block;
+    color: var(--color-accent);
+    font-size: var(--text-md);
+    line-height: 1;
+    margin-top: 0.2em;
+  }
+
   .about__principle strong {
     display: block;
     font-size: var(--text-sm);
@@ -141,7 +142,7 @@ const principles = [
     color: var(--color-text-heading);
     margin-bottom: var(--space-1);
   }
- 
+
   .about__principle p {
     font-size: var(--text-sm);
     color: var(--color-text-secondary);
@@ -150,4 +151,3 @@ const principles = [
     margin: 0;
   }
 </style>
- 

@@ -5,12 +5,12 @@
  */
 
 const navLinks = [
-  { label: 'About',       href: '#about' },
-  { label: 'Engineering', href: '#engineering' },
-  { label: 'Projects',    href: '#projects' },
-  { label: 'Skills',      href: '#skills' },
-  { label: 'Experience',  href: '#experience' },
-  { label: 'Contact',     href: '#contact' },
+  { label: "About", href: "#about" },
+  { label: "Engineering", href: "#engineering" },
+  { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
+  { label: "Experience", href: "#experience" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const year = new Date().getFullYear();
@@ -18,42 +18,49 @@ const year = new Date().getFullYear();
 
 <footer class="site-footer" aria-label="Site footer">
   <div class="container">
-
     <div class="site-footer__inner">
-
       <div class="site-footer__brand">
-        <a href="/" class="site-footer__wordmark" aria-label="Larna Campbell — back to top">
+        <a
+          href="/"
+          class="site-footer__wordmark"
+          aria-label="Larna Campbell — back to top"
+        >
           <span class="site-footer__monogram" aria-hidden="true">LC</span>
           <span>Larna Campbell</span>
         </a>
         <p class="site-footer__tagline">
-          Software engineer and educator building accessible, user-centred systems.
+          Software engineer and educator building accessible, user-centred
+          systems.
         </p>
       </div>
 
       <nav class="site-footer__nav" aria-label="Footer navigation">
         <ul role="list" class="site-footer__nav-list">
-          {navLinks.map((link) => (
-            <li>
-              <a href={link.href} class="site-footer__nav-link">{link.label}</a>
-            </li>
-          ))}
+          {
+            navLinks.map((link) => (
+              <li>
+                <a href={link.href} class="site-footer__nav-link">
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </nav>
-
     </div>
 
     <div class="site-footer__bottom">
       <p class="site-footer__copyright">
         &copy; {year} Larna Campbell. Built with
-        <a href="https://astro.build" target="_blank" rel="noopener noreferrer">Astro</a>.
+        <a href="https://astro.build" target="_blank" rel="noopener noreferrer"
+          >Astro</a
+        >.
       </p>
       <p class="site-footer__a11y">
         Designed with accessibility and inclusion in mind.
         <a href="#main-content" class="site-footer__back-to-top">Back to top</a>
       </p>
     </div>
-
   </div>
 </footer>
 

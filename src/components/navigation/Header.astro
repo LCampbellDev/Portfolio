@@ -22,20 +22,23 @@
  */
 
 const navLinks = [
-  { label: 'About',       href: '#about' },
-  { label: 'Projects',    href: '#projects' },
-  { label: 'Skills',      href: '#skills' },
-  { label: 'Experience',  href: '#experience' },
-  { label: 'Tech Education', href: '#tech-education' },
-  { label: 'Contact',     href: '#contact' },
+  { label: "About", href: "#about" },
+  { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
+  { label: "Experience", href: "#experience" },
+  { label: "Tech Education", href: "#tech-education" },
+  { label: "Contact", href: "#contact" },
 ];
 ---
 
 <header class="site-header" aria-label="Site header" id="site-header">
   <div class="site-header__inner container">
-
     <!-- Wordmark -->
-    <a href="/" class="site-header__wordmark" aria-label="Larna Campbell — home">
+    <a
+      href="/"
+      class="site-header__wordmark"
+      aria-label="Larna Campbell — home"
+    >
       <span class="site-header__wordmark-name" aria-hidden="true">LC</span>
       <span class="site-header__wordmark-full">L Campbell</span>
     </a>
@@ -43,17 +46,18 @@ const navLinks = [
     <!-- Desktop navigation -->
     <nav class="site-header__nav" aria-label="Main navigation">
       <ul role="list" class="site-header__nav-list">
-        {navLinks.map((link) => (
-          <li>
-            <a href={link.href} class="site-header__nav-link">
-              {link.label}
-            </a>
-          </li>
-        ))}
+        {
+          navLinks.map((link) => (
+            <li>
+              <a href={link.href} class="site-header__nav-link">
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </nav>
 
-    
     <!-- Theme toggle -->
     <button
       class="site-header__theme-btn"
@@ -61,18 +65,29 @@ const navLinks = [
       aria-label="Switch to dark mode"
     >
       <!-- Sun icon — shown in dark mode -->
-      <svg class="theme-icon theme-icon--sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <circle cx="12" cy="12" r="5"/>
-        <line x1="12" y1="1" x2="12" y2="3"/>
-        <line x1="12" y1="21" x2="12" y2="23"/>
-        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-        <line x1="1" y1="12" x2="3" y2="12"/>
-        <line x1="21" y1="12" x2="23" y2="12"/>
-        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      <svg
+        class="theme-icon theme-icon--sun"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
       </svg>
-       <!-- Moon icon — shown in light mode -->
+      <!-- Moon icon — shown in light mode -->
       <svg
         class="theme-icon theme-icon--moon"
         width="18"
@@ -85,13 +100,10 @@ const navLinks = [
         stroke-linejoin="round"
         aria-hidden="true"
       >
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
       </svg>
 
-      <span
-        class="site-header__theme-text"
-        id="theme-toggle-text"
-      >
+      <span class="site-header__theme-text" id="theme-toggle-text">
         Dark mode
       </span>
     </button>
@@ -110,7 +122,6 @@ const navLinks = [
         <span></span>
       </span>
     </button>
-
   </div>
 </header>
 
@@ -124,7 +135,8 @@ const navLinks = [
   aria-label="Navigation menu"
 >
   <!-- Backdrop -->
-  <div class="mobile-menu__backdrop" id="menu-backdrop" aria-hidden="true"></div>
+  <div class="mobile-menu__backdrop" id="menu-backdrop" aria-hidden="true">
+  </div>
 
   <!-- Panel -->
   <div class="mobile-menu__panel">
@@ -135,21 +147,33 @@ const navLinks = [
         id="menu-close"
         aria-label="Close navigation menu"
       >
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-          <path d="M4 4L16 16M16 4L4 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M4 4L16 16M16 4L4 16"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"></path>
         </svg>
       </button>
     </div>
 
     <nav aria-label="Mobile navigation">
       <ul role="list" class="mobile-menu__nav-list">
-        {navLinks.map((link) => (
-          <li>
-            <a href={link.href} class="mobile-menu__nav-link">
-              {link.label}
-            </a>
-          </li>
-        ))}
+        {
+          navLinks.map((link) => (
+            <li>
+              <a href={link.href} class="mobile-menu__nav-link">
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </nav>
   </div>
@@ -167,39 +191,41 @@ const navLinks = [
    * - Announce state to screen readers via aria-expanded / aria-hidden
    */
 
-  const toggle    = document.getElementById('menu-toggle') as HTMLButtonElement;
-  const closeBtn  = document.getElementById('menu-close') as HTMLButtonElement;
-  const menu      = document.getElementById('mobile-menu') as HTMLElement;
-  const backdrop  = document.getElementById('menu-backdrop') as HTMLElement;
-  const navLinks  = menu.querySelectorAll<HTMLAnchorElement>('.mobile-menu__nav-link');
+  const toggle = document.getElementById("menu-toggle") as HTMLButtonElement;
+  const closeBtn = document.getElementById("menu-close") as HTMLButtonElement;
+  const menu = document.getElementById("mobile-menu") as HTMLElement;
+  const backdrop = document.getElementById("menu-backdrop") as HTMLElement;
+  const navLinks = menu.querySelectorAll<HTMLAnchorElement>(
+    ".mobile-menu__nav-link",
+  );
 
   // Focusable elements inside the panel for focus trapping
   const getFocusable = () =>
     Array.from(
       menu.querySelectorAll<HTMLElement>(
-        'a[href], button, [tabindex]:not([tabindex="-1"])'
-      )
-    ).filter((el) => !el.hasAttribute('disabled'));
+        'a[href], button, [tabindex]:not([tabindex="-1"])',
+      ),
+    ).filter((el) => !el.hasAttribute("disabled"));
 
   function openMenu() {
-    menu.setAttribute('aria-hidden', 'false');
-    menu.classList.add('is-open');
-    toggle.setAttribute('aria-expanded', 'true');
-    toggle.setAttribute('aria-label', 'Close navigation menu');
-    toggle.classList.add('is-active');
-    document.body.style.overflow = 'hidden';
+    menu.setAttribute("aria-hidden", "false");
+    menu.classList.add("is-open");
+    toggle.setAttribute("aria-expanded", "true");
+    toggle.setAttribute("aria-label", "Close navigation menu");
+    toggle.classList.add("is-active");
+    document.body.style.overflow = "hidden";
 
     // Move focus to close button
     requestAnimationFrame(() => closeBtn.focus());
   }
 
   function closeMenu() {
-    menu.setAttribute('aria-hidden', 'true');
-    menu.classList.remove('is-open');
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Open navigation menu');
-    toggle.classList.remove('is-active');
-    document.body.style.overflow = '';
+    menu.setAttribute("aria-hidden", "true");
+    menu.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open navigation menu");
+    toggle.classList.remove("is-active");
+    document.body.style.overflow = "";
 
     // Return focus to toggle
     toggle.focus();
@@ -207,10 +233,10 @@ const navLinks = [
 
   // Focus trap — cycle through focusable elements only
   function trapFocus(e: KeyboardEvent) {
-    if (e.key !== 'Tab') return;
+    if (e.key !== "Tab") return;
     const focusable = getFocusable();
     const first = focusable[0];
-    const last  = focusable[focusable.length - 1];
+    const last = focusable[focusable.length - 1];
 
     if (e.shiftKey) {
       if (document.activeElement === first) {
@@ -225,74 +251,74 @@ const navLinks = [
     }
   }
 
-  toggle.addEventListener('click', () => {
-    const isOpen = menu.getAttribute('aria-hidden') === 'false';
+  toggle.addEventListener("click", () => {
+    const isOpen = menu.getAttribute("aria-hidden") === "false";
     isOpen ? closeMenu() : openMenu();
   });
 
-  closeBtn.addEventListener('click', closeMenu);
-  backdrop.addEventListener('click', closeMenu);
+  closeBtn.addEventListener("click", closeMenu);
+  backdrop.addEventListener("click", closeMenu);
 
   // Close on nav link click (single-page anchor navigation)
-  navLinks.forEach((link) => link.addEventListener('click', closeMenu));
+  navLinks.forEach((link) => link.addEventListener("click", closeMenu));
 
   // Keyboard: Escape closes, Tab is trapped
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && menu.classList.contains('is-open')) {
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && menu.classList.contains("is-open")) {
       closeMenu();
     }
-    if (menu.classList.contains('is-open')) {
+    if (menu.classList.contains("is-open")) {
       trapFocus(e);
     }
   });
 
   // Scroll behaviour — add scrolled class to header
-  const header = document.getElementById('site-header') as HTMLElement;
+  const header = document.getElementById("site-header") as HTMLElement;
   const SCROLL_THRESHOLD = 20;
 
   function handleScroll() {
     if (window.scrollY > SCROLL_THRESHOLD) {
-      header.classList.add('is-scrolled');
+      header.classList.add("is-scrolled");
     } else {
-      header.classList.remove('is-scrolled');
+      header.classList.remove("is-scrolled");
     }
   }
 
   // Use passive listener for scroll performance
-  window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener("scroll", handleScroll, { passive: true });
   handleScroll(); // Run once on load
 
   // --------------------------------------------------------
   // Theme toggle
   // --------------------------------------------------------
-  const themeBtn = document.getElementById('theme-toggle') as HTMLButtonElement;
+  const themeBtn = document.getElementById("theme-toggle") as HTMLButtonElement;
 
   const themeText = themeBtn.querySelector(
-  '.site-header__theme-text'
+    ".site-header__theme-text",
   ) as HTMLSpanElement;
- 
-  function getTheme(): string {
-    return document.documentElement.getAttribute('data-theme') ?? 'light';
-  }
- 
-  function updateToggleLabel(theme: string) {
-  const nextTheme = theme === 'dark' ? 'light' : 'dark';
-  const visibleLabel = nextTheme === 'light' ? 'Light mode' : 'Dark mode';
 
-  themeBtn.setAttribute('aria-label', `Switch to ${nextTheme} mode`);
-  themeText.textContent = visibleLabel;
+  function getTheme(): string {
+    return document.documentElement.getAttribute("data-theme") ?? "light";
   }
- 
+
+  function updateToggleLabel(theme: string) {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    const visibleLabel = nextTheme === "light" ? "Light mode" : "Dark mode";
+
+    themeBtn.setAttribute("aria-label", `Switch to ${nextTheme} mode`);
+    themeText.textContent = visibleLabel;
+  }
+
   function toggleTheme() {
     const current = getTheme();
-    const next = current === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
+    const next = current === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
     updateToggleLabel(next);
   }
- 
-  themeBtn.addEventListener('click', toggleTheme);
- 
+
+  themeBtn.addEventListener("click", toggleTheme);
+
   // Set correct label on load
   updateToggleLabel(getTheme());
 </script>
@@ -324,11 +350,7 @@ const navLinks = [
     align-items: center;
     justify-content: space-between;
     min-height: 4rem;
-    gap: clamp(
-      var(--space-4),
-      2vw,
-      var(--space-8)
-);
+    gap: clamp(var(--space-4), 2vw, var(--space-8));
   }
 
   /* ----------------------------------------------------------
@@ -375,17 +397,16 @@ const navLinks = [
   }
 
   @media (min-width: 36em) {
-  .site-header__wordmark-full {
-    display: block;
+    .site-header__wordmark-full {
+      display: block;
+    }
   }
-}
 
-@media (max-width: 30em) and (hover: hover) and (pointer: fine) {
-  .site-header {
-    position: static;
+  @media (max-width: 30em) and (hover: hover) and (pointer: fine) {
+    .site-header {
+      position: static;
+    }
   }
-}
-
 
   /* ----------------------------------------------------------
    * DESKTOP NAVIGATION
@@ -422,8 +443,8 @@ const navLinks = [
     transition:
       color var(--transition-fast),
       background-color var(--transition-fast);
-    
-      white-space: nowrap;
+
+    white-space: nowrap;
   }
 
   .site-header__nav-link:hover {
@@ -445,7 +466,7 @@ const navLinks = [
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2.75rem;   /* 44px — minimum touch target */
+    width: 2.75rem; /* 44px — minimum touch target */
     height: 2.75rem;
     padding: 0;
     background: none;
@@ -453,7 +474,9 @@ const navLinks = [
     border-radius: var(--radius-md);
     cursor: pointer;
     color: var(--color-text);
-    transition: border-color var(--transition-fast), background-color var(--transition-fast);
+    transition:
+      border-color var(--transition-fast),
+      background-color var(--transition-fast);
     flex-shrink: 0;
   }
 
@@ -470,52 +493,58 @@ const navLinks = [
     }
   }
 
-  
   /* ----------------------------------------------------------
    * THEME TOGGLE BUTTON
    * ---------------------------------------------------------- */
- 
+
   .site-header__theme-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  width: auto;
-  min-width: 2.75rem;
-  min-height: 2.75rem;
-  padding-inline: var(--space-3);
-  background: none;
-  border: var(--border-width) solid var(--color-border);
-  border-radius: var(--radius-md);
-  cursor: pointer;
-  color: var(--color-text);
-  white-space: nowrap;
-  flex-shrink: 0;
-  transition:
-    border-color var(--transition-fast),
-    background-color var(--transition-fast),
-    color var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    width: auto;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    padding-inline: var(--space-3);
+    background: none;
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    color: var(--color-text);
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition:
+      border-color var(--transition-fast),
+      background-color var(--transition-fast),
+      color var(--transition-fast);
   }
 
   .site-header__theme-text {
-  font-size: var(--text-sm);
-  font-weight: var(--weight-medium);
-}
- 
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+  }
+
   .site-header__theme-btn:hover {
     border-color: var(--color-accent);
     background-color: var(--color-accent-light);
     color: var(--color-accent);
   }
- 
+
   /* Show correct icon based on current theme */
-  .theme-icon--sun  { display: none; }
-  .theme-icon--moon { display: block; }
- 
-  :global([data-theme="dark"]) .theme-icon--sun  { display: block; }
-  :global([data-theme="dark"]) .theme-icon--moon { display: none; }
- 
-  
+  .theme-icon--sun {
+    display: none;
+  }
+  .theme-icon--moon {
+    display: block;
+  }
+
+  :global([data-theme="dark"]) .theme-icon--sun {
+    display: block;
+  }
+  :global([data-theme="dark"]) .theme-icon--moon {
+    display: none;
+  }
+
   /* Hamburger icon — three spans animate to X */
   .site-header__menu-icon {
     display: flex;
