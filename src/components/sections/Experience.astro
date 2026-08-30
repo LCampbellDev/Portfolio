@@ -9,8 +9,9 @@ const experience = [
   {
     role: "Software Engineer",
     org: "Independent Software Engineering Projects",
-    period: "2023 — Present",
-    type: "Software & Engineering",
+    startYear: "2023",
+    endYear: null,
+    type: "Software Engineering",
     highlights: [
       "Designed and built full-stack applications using JavaScript, React, Node.js, Python and SQL",
       "Created REST APIs and structured data flows with validation and error handling",
@@ -22,7 +23,8 @@ const experience = [
   {
     role: "Modern Foreign Languages Teacher and Head of Department",
     org: "Leeds City Council",
-    period: "2017 — Present",
+    startYear: "2017",
+    endYear: null,
     type: "Education Leadership",
     highlights: [
       "Led department-wide improvement initiatives using structured analysis and iterative problem solving",
@@ -52,7 +54,16 @@ const experience = [
           <li class="experience__item">
             <div class="experience__meta">
               <span class="tag">{item.type}</span>
-              <time class="experience__period">{item.period}</time>
+              <span class="experience__period">
+                <time datetime={item.startYear}>{item.startYear}</time>
+                <span aria-hidden="true"> – </span>
+                <span class="sr-only"> to </span>
+                {item.endYear ? (
+                  <time datetime={item.endYear}>{item.endYear}</time>
+                ) : (
+                  <span>Present</span>
+                )}
+              </span>
             </div>
             <div class="experience__content">
               <h3 class="experience__role">{item.role}</h3>
