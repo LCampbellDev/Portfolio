@@ -6,13 +6,16 @@
  */
 ---
 
-<section class="hero section" aria-labelledby="hero-heading">
+<section 
+  class="hero section" 
+  aria-labelledby="hero-heading">
   <div class="container">
     <div class="hero__inner">
       <div class="hero__content">
         <h1 class="hero__heading" id="hero-heading">
           Larna<br />Campbell
         </h1>
+        <p class="hero__role">Full-stack software engineer</p>
 
         <div class="divider" aria-hidden="true"></div>
 
@@ -170,6 +173,15 @@
     color: var(--color-text-heading);
     line-height: var(--leading-tight);
     margin: 0;
+  }
+
+  /* Professional role */
+  .hero__role {
+    margin: var(--space-3) 0 0;
+    font-size: var(--text-lg);
+    font-weight: var(--weight-medium);
+    line-height: var(--leading-normal);
+    color: var(--color-text-secondary);
   }
 
   /* Lead paragraph */

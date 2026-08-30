@@ -2,7 +2,7 @@
 /**
  * SiteHeader.astro
  *
- * Sticky site header with:
+ * Sticky site header (which disappears on high zoom so not obscuring text) with:
  * - Wordmark / name logo linking to homepage
  * - Desktop horizontal nav
  * - Mobile hamburger menu (accessible, keyboard-navigable)
@@ -18,7 +18,6 @@
  * - All nav links keyboard accessible
  * - Escape key closes mobile menu
  * - Visible focus rings (from global reset)
- * - Respects prefers-reduced-motion for all transitions
  */
 
 const navLinks = [
@@ -44,7 +43,7 @@ const navLinks = [
     </a>
 
     <!-- Desktop navigation -->
-    <nav class="site-header__nav" aria-label="Main navigation">
+    <nav class="site-header__nav" aria-label="Main">
       <ul role="list" class="site-header__nav-list">
         {
           navLinks.map((link) => (
@@ -163,7 +162,7 @@ const navLinks = [
       </button>
     </div>
 
-    <nav aria-label="Mobile navigation">
+    <nav aria-label="Mobile">
       <ul role="list" class="mobile-menu__nav-list">
         {
           navLinks.map((link) => (
