@@ -81,11 +81,11 @@ const courses = [
 ];
 ---
 
-<section class="tech-education section section--muted" id="tech-education" aria-labelledby="tech-education-heading">
+<section class="tech-education section section--muted" id="tech-education">
   <div class="container">
 
     <div class="section-header">
-      <h2 class="section-header__title" id="tech-education-heading">
+      <h2 class="section-header__title" >
         Technical education &amp; professional development
       </h2>
       <div class="divider" aria-hidden="true"></div>
@@ -102,7 +102,7 @@ const courses = [
             <h3 class="tech-education__title">{course.title}</h3>
             <p class="tech-education__summary">{course.summary}</p>
             {course.topics.length > 0 && (
-              <ul class="tech-education__topics" role="list" aria-label={`Topics covered in ${course.title}`}>
+              <ul class="tech-education__topics" role="list">
                 {course.topics.map((topic) => (
                   <li class="tech-education__topic">{topic}</li>
                 ))}

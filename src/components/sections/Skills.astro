@@ -135,7 +135,7 @@ const skillGroups = [
 <style>
   .skills__grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-8);
   }
  
@@ -156,6 +156,8 @@ const skillGroups = [
     background-color: var(--color-bg-subtle);
     border: var(--border-width) solid var(--color-border);
     border-radius: var(--radius-lg);
+    min-width: 0;
+    max-width: 100%;
   }
  
   .skills__group-heading {
@@ -176,5 +178,7 @@ const skillGroups = [
     flex-wrap: wrap;
     gap: var(--space-2);
     list-style: none;
+    min-width: 0;
+    max-width: 100%;
   }
 </style>
