@@ -6,76 +6,76 @@
 
 const courses = [
   {
-    provider: 'Code First Girls',
-    title: 'CFGdegree Data and Software Engineering',
-    year: '2026',
+    provider: "Code First Girls",
+    title: "CFGdegree Data and Software Engineering",
+    year: "2026",
     summary:
-      'Developed software with Python, SQL and REST APIs, backend development, data structures, debugging and algorithmic thinking.',
+      "Developed software with Python, SQL and REST APIs, backend development, data structures, debugging and algorithmic thinking.",
     topics: [
-      'APIs and microservices',
-      'Object-oriented programming',
-      'Data structures and libraries',
-      'Recursion and linked lists',
-      'Debugging and algorithm design',
+      "APIs and microservices",
+      "Object-oriented programming",
+      "Data structures and libraries",
+      "Recursion and linked lists",
+      "Debugging and algorithm design",
     ],
   },
   {
-    provider: 'Code First Girls',
-    title: '+Masters in DevOps & Cloud Engineering',
-    year: '2026',
+    provider: "Code First Girls",
+    title: "+Masters in DevOps & Cloud Engineering",
+    year: "2026",
     summary:
-      'Training in cloud platforms, deployment workflows, infrastructure, containers, orchestration and security fundamentals.',
+      "Training in cloud platforms, deployment workflows, infrastructure, containers, orchestration and security fundamentals.",
     topics: [
-      'Built and deployed containerised applications with Docker, Kubernetes and AWS.',
-      'Applied CI/CD concepts to deployment, scaling and rollback.',
-      'Updated YAML manifests in Kubernetes with new observability rules.',
-      'Learned Terraform foundations for infrastructure as code.',
+      "Built and deployed containerised applications with Docker, Kubernetes and AWS.",
+      "Applied CI/CD concepts to deployment, scaling and rollback.",
+      "Updated YAML manifests in Kubernetes with new observability rules.",
+      "Learned Terraform foundations for infrastructure as code.",
     ],
   },
   {
-    provider: 'AI Workshop',
-    title: 'SQL Bootcamp',
-    year: '2026',
+    provider: "AI Workshop",
+    title: "SQL Bootcamp",
+    year: "2026",
     summary:
-      '14-week hands-on SQL programme covering production-grade querying, joins, CTEs, window functions, AI-assisted workflows and GitHub Codespaces.',
+      "14-week hands-on SQL programme covering production-grade querying, joins, CTEs, window functions, AI-assisted workflows and GitHub Codespaces.",
     topics: [
-      'Developed advanced SQL knowledge.',
-      'Wrote production-grade queries using joins, common table expressions and window functions.',
-      'Used AI-assisted workflows and GitHub Codespaces.',
+      "Developed advanced SQL knowledge.",
+      "Wrote production-grade queries using joins, common table expressions and window functions.",
+      "Used AI-assisted workflows and GitHub Codespaces.",
     ],
   },
   {
     provider: "The Coders' Guild",
-    title: 'Project Management with Digital Tools & AI',
-    year: '2025',
+    title: "Project Management with Digital Tools & AI",
+    year: "2025",
     summary:
-      'Trained in delivery workflows, Agile and Waterfall methods, and digital collaboration tools.',
+      "Trained in delivery workflows, Agile and Waterfall methods, and digital collaboration tools.",
     topics: [
-      'Scrum, Kanban and Scrumban',
-      'Jira, ClickUp and Trello',
-      'Agile ceremonies and delivery practices',
+      "Scrum, Kanban and Scrumban",
+      "Jira, ClickUp and Trello",
+      "Agile ceremonies and delivery practices",
     ],
   },
   {
-    provider: 'CFG / Codecademy',
-    title: 'Earlier technical learning',
-    year: '2023–2025',
+    provider: "CFG / Codecademy",
+    title: "Earlier technical learning",
+    year: "2023–2025",
     summary:
-      'Completed foundational technical learning through Code First Girls and Codecademy.',
+      "Completed foundational technical learning through Code First Girls and Codecademy.",
     topics: [
-      'Code First Girls Kickstarter courses in JavaScript, Python, data and SQL.',
-      'Codecademy’s Full-Stack Engineer path in HTML, CSS and JavaScript.',
+      "Code First Girls Kickstarter courses in JavaScript, Python, data and SQL.",
+      "Codecademy’s Full-Stack Engineer path in HTML, CSS and JavaScript.",
     ],
   },
   {
-    provider: 'University of Leeds',
-    title: 'MA Digital Education',
-    year: '2020–2023',
+    provider: "University of Leeds",
+    title: "MA Digital Education",
+    year: "2020–2023",
     summary:
-      'Completed research-informed postgraduate study in digital systems, accessibility, learning design and user-centred technology.',
+      "Completed research-informed postgraduate study in digital systems, accessibility, learning design and user-centred technology.",
     topics: [
-      'Explored how structured information, usability and interface design affect understanding, participation and decision-making.',
-      'Developed knowledge of digital pedagogy, learning theory, accessibility, digital literacy and education product development.',
+      "Explored how structured information, usability and interface design affect understanding, participation and decision-making.",
+      "Developed knowledge of digital pedagogy, learning theory, accessibility, digital literacy and education product development.",
     ],
   },
 ];
@@ -83,36 +83,38 @@ const courses = [
 
 <section class="tech-education section section--muted" id="tech-education">
   <div class="container">
-
     <div class="section-header">
-      <h2 class="section-header__title" >
+      <h2 class="section-header__title">
         Technical education &amp; professional development
       </h2>
       <div class="divider" aria-hidden="true"></div>
     </div>
 
     <ol class="tech-education__list" role="list">
-      {courses.map((course) => (
-        <li class="tech-education__item">
-          <div class="tech-education__meta">
-            <span class="tag">{course.provider}</span>
-            {course.year && <time class="tech-education__year">{course.year}</time>}
-          </div>
-          <div class="tech-education__content">
-            <h3 class="tech-education__title">{course.title}</h3>
-            <p class="tech-education__summary">{course.summary}</p>
-            {course.topics.length > 0 && (
-              <ul class="tech-education__topics" role="list">
-                {course.topics.map((topic) => (
-                  <li class="tech-education__topic">{topic}</li>
-                ))}
-              </ul>
-            )}
-          </div>
-        </li>
-      ))}
+      {
+        courses.map((course) => (
+          <li class="tech-education__item">
+            <div class="tech-education__meta">
+              <span class="tag">{course.provider}</span>
+              {course.year && (
+                <time class="tech-education__year">{course.year}</time>
+              )}
+            </div>
+            <div class="tech-education__content">
+              <h3 class="tech-education__title">{course.title}</h3>
+              <p class="tech-education__summary">{course.summary}</p>
+              {course.topics.length > 0 && (
+                <ul class="tech-education__topics" role="list">
+                  {course.topics.map((topic) => (
+                    <li class="tech-education__topic">{topic}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </li>
+        ))
+      }
     </ol>
-
   </div>
 </section>
 
@@ -188,7 +190,7 @@ const courses = [
   }
 
   .tech-education__topic::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0.6em;

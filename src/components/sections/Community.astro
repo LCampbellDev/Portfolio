@@ -5,47 +5,50 @@
  */
 
 const communities = [
-  { name: 'A11y North', focus: 'Accessibility' },
-  { name: 'Queer Tech Leeds', focus: 'LGBTQ+ in tech' },
-  { name: 'Coding Black Females', focus: 'Black women in tech' },
-  { name: 'Women in Tech York', focus: 'Women in tech' },
-  { name: 'Cajigo Women in Tech', focus: 'Women in tech' },
-  { name: 'NurtureMe Mentoring', focus: 'Diversity in tech mentoring' },
-  { name: 'AI Workshop', focus: 'AI & data learning' },
+  { name: "A11y North", focus: "Accessibility" },
+  { name: "Queer Tech Leeds", focus: "LGBTQ+ in tech" },
+  { name: "Coding Black Females", focus: "Black women in tech" },
+  { name: "Women in Tech York", focus: "Women in tech" },
+  { name: "Cajigo Women in Tech", focus: "Women in tech" },
+  { name: "NurtureMe Mentoring", focus: "Diversity in tech mentoring" },
+  { name: "AI Workshop", focus: "AI & data learning" },
 ];
 ---
 
-<section class="community section" id="community" aria-labelledby="community-heading">
+<section
+  class="community section"
+  id="community"
+  aria-labelledby="community-heading"
+>
   <div class="container">
+    <div class="section-header">
+      <h2 class="section-header__title" id="community-heading">
+        Tech communities and mentoring
+      </h2>
 
-  <div class="section-header">
+      <div class="divider" aria-hidden="true"></div>
 
-  <h2 class="section-header__title" id="community-heading">
-    Tech communities and mentoring
-  </h2>
-
-  <div class="divider" aria-hidden="true"></div>
-
-  <p class="section-header__description">
-    I learn with communities that make technology more accessible, inclusive and supportive.
-    I also take part in mentoring, shared learning and communities of practice.
-  </p>
-</div>
+      <p class="section-header__description">
+        I learn with communities that make technology more accessible, inclusive
+        and supportive. I also take part in mentoring, shared learning and
+        communities of practice.
+      </p>
+    </div>
 
     <ul class="community__grid" role="list">
-      {communities.map((item) => (
-        <li class="community__item">
-          <span class="community__name">{item.name}</span>
-          <span class="tag">{item.focus}</span>
-        </li>
-      ))}
+      {
+        communities.map((item) => (
+          <li class="community__item">
+            <span class="community__name">{item.name}</span>
+            <span class="tag">{item.focus}</span>
+          </li>
+        ))
+      }
     </ul>
-
   </div>
 </section>
 
 <style>
-
   .community .section-header__description {
     max-width: min(100%, var(--container-narrow));
   }
