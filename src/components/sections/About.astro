@@ -75,31 +75,28 @@ const principles = [
  
  @media (min-width: 56em) {
   .about__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+      minmax(0, 3fr)
+      minmax(18rem, 2fr);
     gap: var(--space-16);
     align-items: start;
-    }
   }
+}
  
-  /* Primary text */
-  .about__primary p {
-    max-width: 60ch;
-  }
-
-  .about__story {
+.about__story {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
 }
 
 .about__story p {
-  max-width: 65ch;
+  max-width: 75ch;
   margin: 0;
 }
  
   /* Principles sidebar */
   .about__principles {
-    background-color: var(--color-white);
+    background-color: var(--color-bg-card);
     border: var(--border-width) solid var(--color-border);
     border-radius: var(--radius-lg);
     padding: var(--space-6);
@@ -121,18 +118,21 @@ const principles = [
     list-style: none;
   }
  
-  .about__principle {
-    display: flex;
-    gap: var(--space-3);
-    align-items: flex-start;
-  }
- 
-  .about__principle-icon {
-    color: var(--color-accent);
-    font-size: var(--text-md);
-    line-height: 1.4;
-    flex-shrink: 0;
-  }
+  .about__principles-list > .about__principle {
+  display: grid;
+  grid-template-columns: 1.25rem minmax(0, 1fr);
+  align-items: start;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.about__principle-icon {
+  display: block;
+  color: var(--color-accent);
+  font-size: var(--text-md);
+  line-height: 1;
+  margin-top: 0.2em;
+}
  
   .about__principle strong {
     display: block;
