@@ -103,31 +103,36 @@ const skillGroups = [
 ];
 ---
 
-<section class="skills section section--muted" id="skills">
+<section
+  class="skills section section--muted"
+  id="skills"
+  aria-labelledby="skills-heading"
+>
   <div class="container">
     <div class="section-header">
-      <h2 class="section-header__title">Technical skills</h2>
+      <h2 class="section-header__title" id="skills-heading">
+        Technical skills
+      </h2>
       <div class="divider" aria-hidden="true"></div>
     </div>
 
-    <dl class="skills__grid">
+    <ul class="skills__grid" role="list">
       {
         skillGroups.map((group) => (
-          <div class="skills__group">
-            <dt class="skills__group-heading">{group.heading}</dt>
-            <dd class="skills__group-tags">
-              <ul role="list" class="skills__tag-list">
-                {group.skills.map((skill) => (
-                  <li>
-                    <span class="tag">{skill}</span>
-                  </li>
-                ))}
-              </ul>
-            </dd>
-          </div>
+          <li class="skills__group">
+            <h3 class="skills__group-heading">{group.heading}</h3>
+
+            <ul role="list" class="skills__tag-list">
+              {group.skills.map((skill) => (
+                <li>
+                  <span class="tag">{skill}</span>
+                </li>
+              ))}
+            </ul>
+          </li>
         ))
       }
-    </dl>
+    </ul>
   </div>
 </section>
 
@@ -136,6 +141,9 @@ const skillGroups = [
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: var(--space-8);
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
 
   @media (min-width: 36em) {
@@ -166,10 +174,6 @@ const skillGroups = [
     text-transform: uppercase;
     color: var(--color-accent);
     margin-bottom: var(--space-4);
-  }
-
-  .skills__group-tags {
-    margin: 0;
   }
 
   .skills__tag-list {

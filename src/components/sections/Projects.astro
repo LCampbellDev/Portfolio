@@ -240,6 +240,7 @@ const projects = [
 
   .projects__focus-list {
     display: grid;
+    list-style-type: disc;
     gap: var(--space-2);
     max-width: min(100%, var(--container-narrow));
     margin: 0;
@@ -247,6 +248,10 @@ const projects = [
     color: var(--color-text-secondary);
     font-size: var(--text-sm);
     line-height: var(--leading-normal);
+  }
+
+  .projects__focus-list li::marker {
+    color: var(--color-accent);
   }
 
   .projects__card-footer {
