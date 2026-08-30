@@ -375,10 +375,17 @@ const navLinks = [
   }
 
   @media (min-width: 36em) {
-    .site-header__wordmark-full {
-      display: block;
-    }
+  .site-header__wordmark-full {
+    display: block;
   }
+}
+
+@media (max-width: 30em) and (hover: hover) and (pointer: fine) {
+  .site-header {
+    position: static;
+  }
+}
+
 
   /* ----------------------------------------------------------
    * DESKTOP NAVIGATION
