@@ -13,5 +13,5 @@ export default defineConfig([
     },
   },
 
-  ...eslintPluginAstro.configs["flat/recommended"],
+  ...eslintPluginAstro.configs.recommended,
 ]);
